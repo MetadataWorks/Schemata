@@ -88,43 +88,16 @@
             "$ref": "#/definitions/accessibility"
         },
         "enrichmentAndLinkage": {
-            "$id": "#root/enrichmentAndLinkage",
+            "$id": "#properties/enrichmentAndLinkage",
             "title": "Enrichmentandlinkage",
-            "type": "object",
-            "required": [
-                "qualifiedRelations",
-                "tools"
-            ],
-            "properties": {
-                "qualifiedRelations": {
-                    "$id": "#root/enrichmentAndLinkage/qualifiedRelations",
-                    "title": "Qualifiedrelations",
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$id": "#root/enrichmentAndLinkage/qualifiedRelations/items",
-                        "title": "Items",
-                        "type": "string",
-                        "default": "",
-                        "examples": ["10.1093/ajae/aaq063"],
-                        "pattern": "^.*$"
-                    }
-                },
-                "tools": {
-                    "$id": "#root/enrichmentAndLinkage/tools",
-                    "title": "Tools",
-                    "$comment": "dataElement",
-                    "description": "Please provide the URL of any analysis tools or models that have been created for this dataset and are available for further use. Multiple tools may be provided.",
-                    "allOf": [
-                        {"$ref": "#/definitions/urlList"}
-                    ]
-                }
-            }
+            "description": "This section includes information about related datasets that may have previously been linked, as well as indicating if there is the opportunity to link to other datasets in the future. If a dataset has been enriched and/or derivations, scores and existing tools are available this section allows providers to indicate this to researchers.",
+            "$ref": "#/definitions/enrichmentAndLinkage"
         }
     },
     "definitions": {
         "revision": {
             "$id": "#/definitions/revision",
+            "type": "object",
             "required": [
                 "version",
                 "url"
@@ -143,6 +116,30 @@
                 }
             }
         },
+        "enrichmentAndLinkage": {
+            "$id": "#/definitions/enrichmentAndLinkage",
+            "type": "object",
+            "required": [
+                "qualifiedRelations",
+                "tools"
+            ],
+            "properties": {
+                "qualifiedRelations": {
+                    "$id": "#enrichmentAndLinkage/qualifiedRelations",
+                    "title": "Qualifiedrelations",
+                    "$comment": "dataElement",
+                    "default": [],
+                    "$ref": "#/definitions/urlList"
+                },
+                "tools": {
+                    "$id": "#enrichmentAndLinkage/tools",
+                    "title": "Tools",
+                    "$comment": "dataElement",
+                    "description": "Please provide the URL of any analysis tools or models that have been created for this dataset and are available for further use. Multiple tools may be provided.",
+                    "$ref": "#/definitions/urlList"
+                }
+            }
+        },
         "semver": {
             "type": "string",
             "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$"
@@ -153,65 +150,65 @@
             "minLength": 36,
             "maxLength": 36
         },
-        "10000characters": {
+        "characters10000": {
             "description": "10000 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 10000,
             "$comment": "dataType",
-            "$id": "#/definitions/10000characters"
+            "$id": "#/definitions/characters10000"
         },
-        "1000charactersList": {
+        "characters1000List": {
             "description": "List of 1000 Characters",
             "type": "array",
             "uniqueItems": true,
             "items": {
                 "allOf": [
-                    {"$ref": "#/definitions/10000characters"}
+                    {"$ref": "#/definitions/characters10000"}
                 ]
             },
             "$comment": "dataType",
-            "$id": "#/definitions/1000charactersList"
+            "$id": "#/definitions/characters1000List"
         },
-        "180characters": {
+        "characters180": {
             "description": "180 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 180,
             "$comment": "dataType",
-            "$id": "#/definitions/180characters"
+            "$id": "#/definitions/characters80"
         },
-        "255characters": {
+        "characters255": {
             "description": "255 Character Text",
             "type": "string",
             "minLength": 5,
             "maxLength": 255,
             "$comment": "dataType",
-            "$id": "#/definitions/255characters"
+            "$id": "#/definitions/characters255"
         },
-        "3000characters": {
+        "characters3000": {
             "description": "3000 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 3000,
             "$comment": "dataType",
-            "$id": "#/definitions/3000characters"
+            "$id": "#/definitions/characters3000"
         },
-        "5000characters": {
+        "characters5000": {
             "description": "5000 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 5000,
             "$comment": "dataType",
-            "$id": "#/definitions/5000characters"
+            "$id": "#/definitions/characters5000"
         },
-        "80characters": {
+        "characters80": {
             "description": "80 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 80,
             "$comment": "dataType",
-            "$id": "#/definitions/80characters"
+            "$id": "#/definitions/characters80"
         },
         "abstract": {
             "$id": "#/definitions/abstract",
@@ -219,7 +216,7 @@
             "$comment": "dataElement",
             "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
             "allOf": [
-                {"$ref": "#/definitions/255characters"}
+                {"$ref": "#/definitions/characters255"}
             ]
         },
         "access": {
@@ -244,7 +241,7 @@
                     "$comment": "dataElement",
                     "description": "Please provide a brief description of the environment where data can be accessed by researchers.\nIf no environment is currently available, please indicate the current plans and timelines when the data will be made available through an access environment or process.",
                     "allOf": [
-                        {"$ref": "#/definitions/5000characters"}
+                        {"$ref": "#/definitions/characters5000"}
                     ]
                 },
                 "jurisdiction": {
@@ -282,7 +279,7 @@
             "$comment": "dataElement",
             "description": "Please provide a brief description of the environment where data can be accessed by researchers.\nIf no environment is currently available, please indicate the current plans and timelines when the data will be made available through an access environment or process.",
             "allOf": [
-                {"$ref": "#/definitions/5000characters"}
+                {"$ref": "#/definitions/characters5000"}
             ]
         },
         "accessURL": {
@@ -321,7 +318,7 @@
             "$comment": "dataElement",
             "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
             "allOf": [
-                {"$ref": "#/definitions/180characters"}
+                {"$ref": "#/definitions/characters80"}
             ]
         },
         "associatedMedia": {
@@ -364,7 +361,7 @@
                     "$comment": "dataElement",
                     "description": "A spatial region, area or named place covered by the dataset.",
                     "allOf": [
-                        {"$ref": "#/definitions/80characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "spatialAggregation": {
@@ -373,7 +370,7 @@
                     "$comment": "dataElement",
                     "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
                     "allOf": [
-                        {"$ref": "#/definitions/80characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "startDate": {
@@ -409,7 +406,7 @@
                     "$comment": "dataElement",
                     "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
                     "allOf": [
-                        {"$ref": "#/definitions/80characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "geographicBoundingBox": {
@@ -433,7 +430,7 @@
             "$comment": "dataElement",
             "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
             "allOf": [
-                {"$ref": "#/definitions/10000characters"}
+                {"$ref": "#/definitions/characters10000"}
             ]
         },
         "documentation": {
@@ -449,7 +446,7 @@
                     "$comment": "dataElement",
                     "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
                     "allOf": [
-                        {"$ref": "#/definitions/10000characters"}
+                        {"$ref": "#/definitions/characters10000"}
                     ]
                 },
                 "isPartOf": {
@@ -458,7 +455,7 @@
                     "$comment": "dataElement",
                     "description": "Please complete only if the dataset is part of a group or collection of datasets.",
                     "allOf": [
-                        {"$ref": "#/definitions/80characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "associatedMedia": {
@@ -511,7 +508,7 @@
             "minItems": 1,
             "items": {
                 "allOf": [
-                    {"$ref": "#/definitions/80characters"}
+                    {"$ref": "#/definitions/characters80"}
                 ]
             },
             "$comment": "dataType",
@@ -592,7 +589,7 @@
             "$comment": "dataElement",
             "description": "Please complete only if the dataset is part of a group or collection of datasets.",
             "allOf": [
-                {"$ref": "#/definitions/80characters"}
+                {"$ref": "#/definitions/characters80"}
             ]
         },
         "isReferencedBy": {
@@ -821,7 +818,7 @@
             "minItems": 1,
             "items": {
                 "allOf": [
-                    {"$ref": "#/definitions/80characters"}
+                    {"$ref": "#/definitions/characters80"}
                 ]
             },
             "$comment": "dataType",
@@ -1075,7 +1072,7 @@
             "$comment": "dataElement",
             "description": "Please provide the name of the publisher.",
             "allOf": [
-                {"$ref": "#/definitions/80characters"}
+                {"$ref": "#/definitions/characters80"}
             ]
         },
         "organisation": {
@@ -1104,7 +1101,7 @@
                     "$comment": "dataElement",
                     "description": "Please provide the name of the publisher.",
                     "allOf": [
-                        {"$ref": "#/definitions/80characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "logo": {
@@ -1131,7 +1128,7 @@
                     "$comment": "dataElement",
                     "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
                     "allOf": [
-                        {"$ref": "#/definitions/10000characters"}
+                        {"$ref": "#/definitions/characters10000"}
                     ]
                 }
             }
@@ -1149,7 +1146,7 @@
                     "$comment": "dataElement",
                     "description": "Please indicate the purpose(s) that the dataset was collected.",
                     "allOf": [
-                        {"$ref": "#/definitions/3000characters"}
+                        {"$ref": "#/definitions/characters3000"}
                     ]
                 },
                 "source": {
@@ -1158,7 +1155,7 @@
                     "$comment": "dataElement",
                     "description": "Please indicate the source of the data extraction.",
                     "allOf": [
-                        {"$ref": "#/definitions/3000characters"}
+                        {"$ref": "#/definitions/characters3000"}
                     ]
                 }
             }
@@ -1178,7 +1175,7 @@
             "$comment": "dataElement",
             "description": "Please indicate the purpose(s) that the dataset was collected.",
             "allOf": [
-                {"$ref": "#/definitions/3000characters"}
+                {"$ref": "#/definitions/characters3000"}
             ]
         },
         "references": {
@@ -1196,7 +1193,7 @@
             "$comment": "dataElement",
             "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
             "allOf": [
-                {"$ref": "#/definitions/1000charactersList"}
+                {"$ref": "#/definitions/characters1000List"}
             ]
         },
         "source": {
@@ -1205,7 +1202,7 @@
             "$comment": "dataElement",
             "description": "Please indicate the source of the data extraction.",
             "allOf": [
-                {"$ref": "#/definitions/3000characters"}
+                {"$ref": "#/definitions/characters3000"}
             ]
         },
         "spatialAggregation": {
@@ -1214,7 +1211,7 @@
             "$comment": "dataElement",
             "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
             "allOf": [
-                {"$ref": "#/definitions/80characters"}
+                {"$ref": "#/definitions/characters80"}
             ]
         },
         "spatialCoverage": {
@@ -1223,7 +1220,7 @@
             "$comment": "dataElement",
             "description": "A spatial region, area or named place covered by the dataset.",
             "allOf": [
-                {"$ref": "#/definitions/80characters"}
+                {"$ref": "#/definitions/characters80"}
             ]
         },
         "spatialResolution": {
@@ -1232,7 +1229,7 @@
             "$comment": "dataElement",
             "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
             "allOf": [
-                {"$ref": "#/definitions/80characters"}
+                {"$ref": "#/definitions/characters80"}
             ]
         },
         "startDate": {
@@ -1263,7 +1260,7 @@
                     "$comment": "dataElement",
                     "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 180 characters or under.",
                     "allOf": [
-                        {"$ref": "#/definitions/80characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "abstract": {
@@ -1272,7 +1269,7 @@
                     "$comment": "dataElement",
                     "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
                     "allOf": [
-                        {"$ref": "#/definitions/255characters"}
+                        {"$ref": "#/definitions/characters255"}
                     ]
                 },
                 "contactPoint": {
@@ -1309,7 +1306,7 @@
                     "$comment": "dataElement",
                     "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
                     "allOf": [
-                        {"$ref": "#/definitions/180characters"}
+                        {"$ref": "#/definitions/characters80"}
                     ]
                 },
                 "publisher": {
@@ -1403,7 +1400,7 @@
                     "$comment": "dataElement",
                     "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
                     "allOf": [
-                        {"$ref": "#/definitions/1000charactersList"}
+                        {"$ref": "#/definitions/characters1000List"}
                     ]
                 },
                 "investigations": {
