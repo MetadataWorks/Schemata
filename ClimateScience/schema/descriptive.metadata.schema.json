@@ -1,0 +1,1439 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/MetadataWorks/Schemata/ClimateScience/schema/descriptive.metadata.schema",
+    "type": "object",
+    "title": "IPCC Dataset",
+    "description": "IPCC descriptive metadata specification v1.0.0",
+    "version": "0.0.1",
+    "status": "draft",
+    "required": ["summary"],
+    "additionalProperties": false,
+    "properties": {
+        "identifier": {
+            "$id": "#/properties/identifier",
+            "title": "Dataset identifier",
+            "$comment": "http://purl.org/dc/terms/identifier",
+            "examples": [
+                ["226fb3f1-4471-400a-8c39-2b66d46a39b6"]
+            ],
+            "description": "System dataset identifier",
+            "anyOf": [
+                {"$ref": "#/definitions/uuidv4"},
+                {
+                    "type": "string",
+                    "format": "uri"
+                }
+            ]
+        },
+        "version": {
+            "$id": "#/properties/version",
+            "title": "Dataset Version",
+            "description": "Dataset metadata version",
+            "$ref": "#/definitions/semver",
+            "examples": ["1.1.0"]
+        },
+        "revisions": {
+            "$id": "#/properties/revisions",
+            "title": "Dataset Revisions",
+            "description": "Revisions of Dataset metadata",
+            "type": "array",
+            "items": [
+                {"$ref": "#/definitions/revision"}
+            ]
+        },
+        "issued": {
+            "$id": "#/properties/issued",
+            "title": "Creation Date",
+            "$comment": "dcat:issued",
+            "description": "Dataset Metadata Creation Date",
+            "type": "string",
+            "format": "date-time"
+        },
+        "modified": {
+            "$id": "#/properties/modified",
+            "title": "Modification Date",
+            "$comment": "dcat:modified",
+            "description": "Dataset Metadata Creation Date",
+            "type": "string",
+            "format": "date-time"
+        },
+        "summary": {
+            "$id": "#/properties/summary",
+            "title": "Summary",
+            "description": "Summary metadata must be completed by Data Custodians onboarding metadata.",
+            "$ref": "#/definitions/summary"
+        },
+        "documentation": {
+            "$id": "#/properties/documentation",
+            "title": "Documentation",
+            "description": "Documentation can include a rich text description of the dataset or links to media such as documents, images, presentations, videos or links to data dictionaries, profiles or dashboards.",
+            "$ref": "#/definitions/documentation"
+        },
+        "coverage": {
+            "$id": "#/properties/coverage",
+            "title": "Coverage",
+            "description": "This information includes attributes for geographical and temporal coverage, cohort details etc. to enable a deeper understanding of the dataset content so that researchers can make decisions about the relevance of the underlying data.",
+            "$ref": "#/definitions/coverage"
+        },
+        "provenance": {
+            "$id": "#/properties/provenance",
+            "title": "Provenance",
+            "description": "Provenance information allows researchers to understand data within the context of its origins and can be an indicator of quality, authenticity and timeliness.",
+            "$ref": "#/definitions/provenance"
+        },
+        "accessibility": {
+            "$id": "#/properties/accessibility",
+            "title": "Accessibility",
+            "description": "Accessibility information allows researchers to understand access, usage, limitations, formats, standards and linkage or interoperability with toolsets. This section includes information about how the data can be used and how it is currently being used.",
+            "$ref": "#/definitions/accessibility"
+        },
+        "enrichmentAndLinkage": {
+            "$id": "#root/enrichmentAndLinkage",
+            "title": "Enrichmentandlinkage",
+            "type": "object",
+            "required": [
+                "qualifiedRelations",
+                "tools"
+            ],
+            "properties": {
+                "qualifiedRelations": {
+                    "$id": "#root/enrichmentAndLinkage/qualifiedRelations",
+                    "title": "Qualifiedrelations",
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$id": "#root/enrichmentAndLinkage/qualifiedRelations/items",
+                        "title": "Items",
+                        "type": "string",
+                        "default": "",
+                        "examples": ["10.1093/ajae/aaq063"],
+                        "pattern": "^.*$"
+                    }
+                },
+                "tools": {
+                    "$id": "#root/enrichmentAndLinkage/tools",
+                    "title": "Tools",
+                    "$comment": "dataElement",
+                    "description": "Please provide the URL of any analysis tools or models that have been created for this dataset and are available for further use. Multiple tools may be provided.",
+                    "allOf": [
+                        {"$ref": "#/definitions/urlList"}
+                    ]
+                }
+            }
+        }
+    },
+    "definitions": {
+        "revision": {
+            "$id": "#/definitions/revision",
+            "required": [
+                "version",
+                "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "version": {
+                    "$id": "#/definitions/revision/version",
+                    "description": "Semantic Version",
+                    "$ref": "#/definitions/semver"
+                },
+                "url": {
+                    "$id": "#/definitions/revision/url",
+                    "description": "URL endpoint to obtain the version",
+                    "$ref": "#/definitions/url"
+                }
+            }
+        },
+        "semver": {
+            "type": "string",
+            "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$"
+        },
+        "uuidv4": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+            "minLength": 36,
+            "maxLength": 36
+        },
+        "10000characters": {
+            "description": "10000 Character Text",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 10000,
+            "$comment": "dataType",
+            "$id": "#/definitions/10000characters"
+        },
+        "1000charactersList": {
+            "description": "List of 1000 Characters",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "allOf": [
+                    {"$ref": "#/definitions/10000characters"}
+                ]
+            },
+            "$comment": "dataType",
+            "$id": "#/definitions/1000charactersList"
+        },
+        "180characters": {
+            "description": "180 Character Text",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 180,
+            "$comment": "dataType",
+            "$id": "#/definitions/180characters"
+        },
+        "255characters": {
+            "description": "255 Character Text",
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 255,
+            "$comment": "dataType",
+            "$id": "#/definitions/255characters"
+        },
+        "3000characters": {
+            "description": "3000 Character Text",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 3000,
+            "$comment": "dataType",
+            "$id": "#/definitions/3000characters"
+        },
+        "5000characters": {
+            "description": "5000 Character Text",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 5000,
+            "$comment": "dataType",
+            "$id": "#/definitions/5000characters"
+        },
+        "80characters": {
+            "description": "80 Character Text",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80,
+            "$comment": "dataType",
+            "$id": "#/definitions/80characters"
+        },
+        "abstract": {
+            "$id": "#/definitions/abstract",
+            "title": "Abstract",
+            "$comment": "dataElement",
+            "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
+            "allOf": [
+                {"$ref": "#/definitions/255characters"}
+            ]
+        },
+        "access": {
+            "$id": "#/definitions/access",
+            "type": "object",
+            "title": "Access",
+            "$comment": "dataClass",
+            "description": "This section includes information about data access.",
+            "properties": {
+                "accessURL": {
+                    "$id": "#/access/accessURL",
+                    "title": "Access URL",
+                    "$comment": "dataElement",
+                    "description": "A URL of the resource that gives access to a distribution of the dataset. E.g. landing page, download link, service desk request.",
+                    "allOf": [
+                        {"$ref": "#/definitions/urlList"}
+                    ]
+                },
+                "accessService": {
+                    "$id": "#/access/accessService",
+                    "title": "Access Service",
+                    "$comment": "dataElement",
+                    "description": "Please provide a brief description of the environment where data can be accessed by researchers.\nIf no environment is currently available, please indicate the current plans and timelines when the data will be made available through an access environment or process.",
+                    "allOf": [
+                        {"$ref": "#/definitions/5000characters"}
+                    ]
+                },
+                "jurisdiction": {
+                    "$id": "#/access/jurisdiction",
+                    "title": "Jurisdiction",
+                    "$comment": "dataElement",
+                    "description": "Please use country code from ISO 3166-1 country codes and the associated ISO 3166-2 for regions, cities, states etc. for the country/state under whose laws the data subjects\u2019 data is collected, processed and stored. Multiple Jurisdictions may be provided (if applicable).",
+                    "allOf": [
+                        {"$ref": "#/definitions/isoCountryCodeEnum"}
+                    ]
+                },
+                "language": {
+                    "$id": "#/access/language",
+                    "title": "Language",
+                    "$comment": "dataElement",
+                    "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
+                    "allOf": [
+                        {"$ref": "#/definitions/languageEnum"}
+                    ]
+                },
+                "format": {
+                    "$id": "#/access/format",
+                    "title": "Format",
+                    "$comment": "dataElement",
+                    "description": "The file format of the distribution.",
+                    "allOf": [
+                        {"$ref": "#/definitions/formatEnum"}
+                    ]
+                }
+            }
+        },
+        "accessService": {
+            "$id": "#/definitions/accessService",
+            "title": "Access Service",
+            "$comment": "dataElement",
+            "description": "Please provide a brief description of the environment where data can be accessed by researchers.\nIf no environment is currently available, please indicate the current plans and timelines when the data will be made available through an access environment or process.",
+            "allOf": [
+                {"$ref": "#/definitions/5000characters"}
+            ]
+        },
+        "accessURL": {
+            "$id": "#/definitions/accessURL",
+            "title": "Access URL",
+            "$comment": "dataElement",
+            "description": "A URL of the resource that gives access to a distribution of the dataset. E.g. landing page, download link, service desk request.",
+            "allOf": [
+                {"$ref": "#/definitions/urlList"}
+            ]
+        },
+        "accessibility": {
+            "$id": "#/definitions/accessibility",
+            "type": "object",
+            "title": "Accessibility",
+            "$comment": "dataClass",
+            "description": "Accessibility information allows researchers to understand access, usage, limitations, formats, standards and linkage or interoperability with toolsets. This section includes information about how the data can be used and how it is currently being used.",
+            "properties": {
+                "usage": {
+                    "$id": "#/accessibility/usage",
+                    "title": "Usage",
+                    "description": "This section includes information about how the data can be used and how it is currently being used.",
+                    "$ref": "#/definitions/usage"
+                },
+                "access": {
+                    "$id": "#/accessibility/access",
+                    "title": "Access",
+                    "description": "This section includes information about data access.",
+                    "$ref": "#/definitions/access"
+                }
+            }
+        },
+        "alternateIdentifier": {
+            "$id": "#/definitions/alternateIdentifier",
+            "title": "Alternate Identifier",
+            "$comment": "dataElement",
+            "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
+            "allOf": [
+                {"$ref": "#/definitions/180characters"}
+            ]
+        },
+        "associatedMedia": {
+            "$id": "#/definitions/associatedMedia",
+            "title": "Associated Media",
+            "$comment": "dataElement",
+            "description": "Please provide any media associated with the dataset using a valid URI for the content. This is an opportunity to provide additional context that could be useful for researchers wanting to understand more about the dataset and its relevance to their research question.\nThe following formats will be previewed .jpg, .png or .svg, .pdf, .xslx or .docx. Other formats can be used as url links.\nNote: media asset can be hosted by the organisation or uploaded.",
+            "allOf": [
+                {"$ref": "#/definitions/urlList"}
+            ]
+        },
+        "contactPoint": {
+            "$id": "#/definitions/contactPoint",
+            "title": "Contact Point",
+            "$comment": "dataElement",
+            "description": "Please provide a valid email address that can be used to coordinate data access requests with the publisher. If an employee/author email address is provided an explicit consent must be obtained for this purpose.",
+            "allOf": [
+                {"$ref": "#/definitions/emailAddress"}
+            ]
+        },
+        "contactPointOrg": {
+            "$id": "#/definitions/contactPointOrg",
+            "title": "Contact Point",
+            "$comment": "dataElement",
+            "description": "Please provide a valid email address that can be used to coordinate data enquiries with the publisher.\nOrganisations are expected to provide a dedicated email address associated with the data access request process for their organisation.\nThis will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.",
+            "allOf": [
+                {"$ref": "#/definitions/emailAddress"}
+            ]
+        },
+        "coverage": {
+            "$id": "#/definitions/coverage",
+            "type": "object",
+            "title": "Coverage",
+            "$comment": "dataClass",
+            "description": "This information includes attributes for geographical and temporal coverage, cohort details etc. to enable a deeper understanding of the dataset content so that researchers can make decisions about the relevance of the underlying data.",
+            "properties": {
+                "spatialCoverage": {
+                    "$id": "#/coverage/spatialCoverage",
+                    "title": "Spatial Coverage",
+                    "$comment": "dataElement",
+                    "description": "A spatial region, area or named place covered by the dataset.",
+                    "allOf": [
+                        {"$ref": "#/definitions/80characters"}
+                    ]
+                },
+                "spatialAggregation": {
+                    "$id": "#/coverage/spatialAggregation",
+                    "title": "Spatial Aggregation",
+                    "$comment": "dataElement",
+                    "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
+                    "allOf": [
+                        {"$ref": "#/definitions/80characters"}
+                    ]
+                },
+                "startDate": {
+                    "$id": "#/coverage/startDate",
+                    "title": "Start Date",
+                    "$comment": "dataElement",
+                    "description": "The start of the time period that the dataset provides coverage for. \nIf there are multiple cohorts in the dataset with varying start dates, please provide the earliest date and use the description or the media attribute to provide more information.",
+                    "allOf": [
+                        {"$ref": "#/definitions/date"}
+                    ]
+                },
+                "endDate": {
+                    "$id": "#/coverage/endDate",
+                    "title": "End Date",
+                    "$comment": "dataElement",
+                    "description": "The end of the time period that the dataset provides coverage for.  \nIf the dataset is \u201cContinuous\u201d and has no known end date, please leave blank. \nIf there are multiple cohorts in the dataset with varying end dates, please provide the latest date and use the description or the media attribute to provide more information.",
+                    "allOf": [
+                        {"$ref": "#/definitions/date"}
+                    ]
+                },
+                "temporalResolution": {
+                    "$id": "#/coverage/temporalResolution",
+                    "title": "Temporal Resolution",
+                    "$comment": "dataElement",
+                    "description": "Minimum time period resolvable in the dataset distribution.",
+                    "allOf": [
+                        {"$ref": "#/definitions/temporalResolutionEnum"}
+                    ]
+                },
+                "spatialResolution": {
+                    "$id": "#/coverage/spatialResolution",
+                    "title": "Spatial Resolution",
+                    "$comment": "dataElement",
+                    "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
+                    "allOf": [
+                        {"$ref": "#/definitions/80characters"}
+                    ]
+                },
+                "geographicBoundingBox": {
+                    "$id": "#/coverage/geographicBoundingBox",
+                    "title": "Geographic Bounding Box",
+                    "description": "The geographic bounding box describes the spatial coverage in terms of a square as specified by the longitude and latitude values of the lower left and upper right corners.\nPlease enter the four values in terms of degrees North or East, with longitudes given relative to the prime meridian (yielding values between -180E and 180E).\nNote that a \"north up\" area is described so that generally the upper right longitude will be greater than the lower left longitude.",
+                    "$ref": "#/definitions/geographicBoundingBox"
+                }
+            }
+        },
+        "date": {
+            "description": "Date",
+            "type": "string",
+            "format": "date",
+            "$comment": "dataType",
+            "$id": "#/definitions/date"
+        },
+        "description": {
+            "$id": "#/definitions/description",
+            "title": "Description",
+            "$comment": "dataElement",
+            "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
+            "allOf": [
+                {"$ref": "#/definitions/10000characters"}
+            ]
+        },
+        "documentation": {
+            "$id": "#/definitions/documentation",
+            "type": "object",
+            "title": "Documentation",
+            "$comment": "dataClass",
+            "description": "Documentation can include a rich text description of the dataset or links to media such as documents, images, presentations, videos or links to data dictionaries, profiles or dashboards.",
+            "properties": {
+                "description": {
+                    "$id": "#/documentation/description",
+                    "title": "Description",
+                    "$comment": "dataElement",
+                    "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
+                    "allOf": [
+                        {"$ref": "#/definitions/10000characters"}
+                    ]
+                },
+                "isPartOf": {
+                    "$id": "#/documentation/isPartOf",
+                    "title": "Is Part Of",
+                    "$comment": "dataElement",
+                    "description": "Please complete only if the dataset is part of a group or collection of datasets.",
+                    "allOf": [
+                        {"$ref": "#/definitions/80characters"}
+                    ]
+                },
+                "associatedMedia": {
+                    "$id": "#/documentation/associatedMedia",
+                    "title": "Associated Media",
+                    "$comment": "dataElement",
+                    "description": "Please provide any media associated with the dataset using a valid URI for the content. This is an opportunity to provide additional context that could be useful for researchers wanting to understand more about the dataset and its relevance to their research question.\nThe following formats will be previewed .jpg, .png or .svg, .pdf, .xslx or .docx. Other formats can be used as url links.\nNote: media asset can be hosted by the organisation or uploaded.",
+                    "allOf": [
+                        {"$ref": "#/definitions/urlList"}
+                    ]
+                }
+            }
+        },
+        "doi": {
+            "description": "DOI format",
+            "type": "string",
+            "pattern": "^10.\\d{4,9}/[-._;()/:a-zA-Z0-9]+$",
+            "$comment": "dataType",
+            "$id": "#/definitions/doi"
+        },
+        "emailAddress": {
+            "description": "Email Address",
+            "type": "string",
+            "format": "email",
+            "$comment": "dataType",
+            "$id": "#/definitions/emailAddress"
+        },
+        "endDate": {
+            "$id": "#/definitions/endDate",
+            "title": "End Date",
+            "$comment": "dataElement",
+            "description": "The end of the time period that the dataset provides coverage for.  \nIf the dataset is \u201cContinuous\u201d and has no known end date, please leave blank. \nIf there are multiple cohorts in the dataset with varying end dates, please provide the latest date and use the description or the media attribute to provide more information.",
+            "allOf": [
+                {"$ref": "#/definitions/date"}
+            ]
+        },
+        "format": {
+            "$id": "#/definitions/format",
+            "title": "Format",
+            "$comment": "dataElement",
+            "description": "The file format of the distribution.",
+            "allOf": [
+                {"$ref": "#/definitions/formatEnum"}
+            ]
+        },
+        "formatEnum": {
+            "description": "Enumeration for File Format",
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+                "allOf": [
+                    {"$ref": "#/definitions/80characters"}
+                ]
+            },
+            "$comment": "dataType",
+            "$id": "#/definitions/formatEnum"
+        },
+        "geographicBoundingBox": {
+            "$id": "#/definitions/geographicBoundingBox",
+            "type": "object",
+            "title": "Geographic Bounding Box",
+            "$comment": "dataClass",
+            "description": "The geographic bounding box describes the spatial coverage in terms of a square as specified by the longitude and latitude values of the lower left and upper right corners.\nPlease enter the four values in terms of degrees North or East, with longitudes given relative to the prime meridian (yielding values between -180E and 180E).\nNote that a \"north up\" area is described so that generally the upper right longitude will be greater than the lower left longitude.",
+            "properties": {
+                "lowerLeftLatitude": {
+                    "$id": "#/geographicBoundingBox/lowerLeftLatitude",
+                    "title": "Lower Left Latitude",
+                    "$comment": "dataElement",
+                    "description": "The geographic bounding box describes a \"north up\" area. The lower left latitude will be smaller than the upper right latitude.",
+                    "allOf": [
+                        {"$ref": "#/definitions/latitude"}
+                    ]
+                },
+                "lowerLeftLongitude": {
+                    "$id": "#/geographicBoundingBox/lowerLeftLongitude",
+                    "title": "Lower Left Longitude",
+                    "$comment": "dataElement",
+                    "description": "The geographic bounding box describes a \"north up\" area. Generally the lower left longitude will be smaller than the upper right longitude. However when the area crosses the 180° meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.",
+                    "allOf": [
+                        {"$ref": "#/definitions/longitude"}
+                    ]
+                },
+                "upperRightLatitude": {
+                    "$id": "#/geographicBoundingBox/upperRightLatitude",
+                    "title": "Upper Right Latitude",
+                    "$comment": "dataElement",
+                    "description": "The geographic bounding box describes a \"north up\" area. Upper right latitude will be greater than the lower left latitude.",
+                    "allOf": [
+                        {"$ref": "#/definitions/latitude"}
+                    ]
+                },
+                "upperRightLongitude": {
+                    "$id": "#/geographicBoundingBox/upperRightLongitude",
+                    "title": "Upper Right Longitude",
+                    "$comment": "dataElement",
+                    "description": "The geographic bounding box describes a \"north up\" area. Generally the upper right longitude will be greater than the lower left longitude. However when the area crosses the 180° meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.",
+                    "allOf": [
+                        {"$ref": "#/definitions/longitude"}
+                    ]
+                }
+            },
+            "required": [
+                "lowerLeftLatitude",
+                "lowerLeftLongitude",
+                "upperRightLatitude",
+                "upperRightLongitude"
+            ]
+        },
+        "identifier": {
+            "$id": "#/definitions/identifier",
+            "title": "Identifier",
+            "$comment": "dataElement",
+            "description": "Please provide an identifier for your organisation.",
+            "allOf": [
+                {"$ref": "#/definitions/url"}
+            ]
+        },
+        "investigations": {
+            "$id": "#/definitions/investigations",
+            "title": "Investigations",
+            "$comment": "dataElement",
+            "description": "Please provide a link to any active or unpublished projects that are using the dataset.",
+            "allOf": [
+                {"$ref": "#/definitions/urlList"}
+            ]
+        },
+        "isPartOf": {
+            "$id": "#/definitions/isPartOf",
+            "title": "Is Part Of",
+            "$comment": "dataElement",
+            "description": "Please complete only if the dataset is part of a group or collection of datasets.",
+            "allOf": [
+                {"$ref": "#/definitions/80characters"}
+            ]
+        },
+        "isReferencedBy": {
+            "$id": "#/definitions/isReferencedBy",
+            "title": "Is Referenced By",
+            "$comment": "dataElement",
+            "description": "Please provide the keystone paper associated with the dataset. Also include a list of known citations, if available, and should be links to existing resources where the dataset has been used or referenced.",
+            "allOf": [
+                {"$ref": "#/definitions/urlList"}
+            ]
+        },
+        "isoCountryCodeEnum": {
+            "type": "string",
+            "enum": [
+                "AD",
+                "AE",
+                "AF",
+                "AG",
+                "AL",
+                "AM",
+                "AO",
+                "AR",
+                "AT",
+                "AU",
+                "AZ",
+                "BA",
+                "BB",
+                "BD",
+                "BE",
+                "BF",
+                "BG",
+                "BH",
+                "BI",
+                "BJ",
+                "BN",
+                "BO",
+                "BR",
+                "BS",
+                "BT",
+                "BW",
+                "BY",
+                "BZ",
+                "CA",
+                "CD",
+                "CF",
+                "CG",
+                "CH",
+                "CI",
+                "CL",
+                "CM",
+                "CN",
+                "CO",
+                "CR",
+                "CU",
+                "CV",
+                "CY",
+                "CZ",
+                "DE",
+                "DJ",
+                "DK",
+                "DM",
+                "DO",
+                "DZ",
+                "EC",
+                "EE",
+                "EG",
+                "ER",
+                "ES",
+                "ET",
+                "FI",
+                "FJ",
+                "FM",
+                "FR",
+                "GA",
+                "GB",
+                "GD",
+                "GE",
+                "GH",
+                "GM",
+                "GN",
+                "GQ",
+                "GR",
+                "GT",
+                "GW",
+                "GY",
+                "HN",
+                "HR",
+                "HT",
+                "HU",
+                "ID",
+                "IE",
+                "IL",
+                "IN",
+                "IQ",
+                "IR",
+                "IS",
+                "IT",
+                "JM",
+                "JO",
+                "JP",
+                "KE",
+                "KG",
+                "KH",
+                "KI",
+                "KM",
+                "KN",
+                "KP",
+                "KR",
+                "KW",
+                "KZ",
+                "LA",
+                "LB",
+                "LC",
+                "LI",
+                "LK",
+                "LR",
+                "LS",
+                "LT",
+                "LU",
+                "LV",
+                "LY",
+                "MA",
+                "MC",
+                "MD",
+                "ME",
+                "MG",
+                "MH",
+                "MK",
+                "ML",
+                "MM",
+                "MN",
+                "MR",
+                "MT",
+                "MU",
+                "MV",
+                "MW",
+                "MX",
+                "MY",
+                "MZ",
+                "NA",
+                "NE",
+                "NG",
+                "NI",
+                "NL",
+                "NO",
+                "NP",
+                "NR",
+                "NZ",
+                "OM",
+                "PA",
+                "PE",
+                "PG",
+                "PH",
+                "PK",
+                "PL",
+                "PT",
+                "PW",
+                "PY",
+                "QA",
+                "RO",
+                "RS",
+                "RU",
+                "RW",
+                "SA",
+                "SB",
+                "SC",
+                "SD",
+                "SE",
+                "SG",
+                "SI",
+                "SK",
+                "SL",
+                "SM",
+                "SN",
+                "SO",
+                "SR",
+                "SS",
+                "ST",
+                "SV",
+                "SY",
+                "SZ",
+                "TD",
+                "TG",
+                "TH",
+                "TJ",
+                "TL",
+                "TM",
+                "TN",
+                "TO",
+                "TR",
+                "TT",
+                "TV",
+                "TZ",
+                "UA",
+                "UG",
+                "US",
+                "UY",
+                "UZ",
+                "VA",
+                "VC",
+                "VE",
+                "VN",
+                "VU",
+                "WS",
+                "YE",
+                "ZA",
+                "ZM",
+                "ZW"
+            ],
+            "$comment": "dataType",
+            "$id": "#/definitions/isoCountryCodeEnum"
+        },
+        "jurisdiction": {
+            "$id": "#/definitions/jurisdiction",
+            "title": "Jurisdiction",
+            "$comment": "dataElement",
+            "description": "Please use country code from ISO 3166-1 country codes and the associated ISO 3166-2 for regions, cities, states etc. for the country/state under whose laws the data subjects\u2019 data is collected, processed and stored. Multiple Jurisdictions may be provided (if applicable).",
+            "allOf": [
+                {"$ref": "#/definitions/isoCountryCodeEnum"}
+            ]
+        },
+        "keywordList": {
+            "description": "List of Keywords",
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+                "allOf": [
+                    {"$ref": "#/definitions/80characters"}
+                ]
+            },
+            "$comment": "dataType",
+            "$id": "#/definitions/keywordList"
+        },
+        "keywords": {
+            "$id": "#/definitions/keywords",
+            "title": "Keywords",
+            "$comment": "dataElement",
+            "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset. \nIPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
+            "allOf": [
+                {"$ref": "#/definitions/keywordList"}
+            ]
+        },
+        "language": {
+            "$id": "#/definitions/language",
+            "title": "Language",
+            "$comment": "dataElement",
+            "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
+            "allOf": [
+                {"$ref": "#/definitions/languageEnum"}
+            ]
+        },
+        "languageEnum": {
+            "description": "Enumeration for Languages",
+            "type": "string",
+            "enum": [
+                "aa",
+                "ab",
+                "ae",
+                "af",
+                "ak",
+                "am",
+                "an",
+                "ar",
+                "as",
+                "av",
+                "ay",
+                "az",
+                "ba",
+                "be",
+                "bg",
+                "bh",
+                "bi",
+                "bm",
+                "bn",
+                "bo",
+                "br",
+                "bs",
+                "ca",
+                "ce",
+                "ch",
+                "co",
+                "cr",
+                "cs",
+                "cu",
+                "cv",
+                "cy",
+                "da",
+                "de",
+                "dv",
+                "dz",
+                "ee",
+                "el",
+                "en",
+                "eo",
+                "es",
+                "et",
+                "eu",
+                "fa",
+                "ff",
+                "fi",
+                "fj",
+                "fo",
+                "fr",
+                "fy",
+                "ga",
+                "gd",
+                "gl",
+                "gn",
+                "gu",
+                "gv",
+                "ha",
+                "he",
+                "hi",
+                "ho",
+                "hr",
+                "ht",
+                "hu",
+                "hy",
+                "hz",
+                "ia",
+                "id",
+                "ie",
+                "ig",
+                "ii",
+                "ik",
+                "io",
+                "is",
+                "it",
+                "iu",
+                "ja",
+                "jv",
+                "ka",
+                "kg",
+                "ki",
+                "kj",
+                "kk",
+                "kl",
+                "km",
+                "kn",
+                "ko",
+                "kr",
+                "ks",
+                "ku",
+                "kv",
+                "kw",
+                "ky",
+                "la",
+                "lb",
+                "lg",
+                "li",
+                "ln",
+                "lo",
+                "lt",
+                "lu",
+                "lv",
+                "mg",
+                "mh",
+                "mi",
+                "mk",
+                "ml",
+                "mn",
+                "mr",
+                "ms",
+                "mt",
+                "my",
+                "na",
+                "nb",
+                "nd",
+                "ne",
+                "ng",
+                "nl",
+                "nn",
+                "no",
+                "nr",
+                "nv",
+                "ny",
+                "oc",
+                "oj",
+                "om",
+                "or",
+                "os",
+                "pa",
+                "pi",
+                "pl",
+                "ps",
+                "pt",
+                "qu",
+                "rm",
+                "rn",
+                "ro",
+                "ru",
+                "rw",
+                "sa",
+                "sc",
+                "sd",
+                "se",
+                "sg",
+                "si",
+                "sk",
+                "sl",
+                "sm",
+                "sn",
+                "so",
+                "sq",
+                "sr",
+                "ss",
+                "st",
+                "su",
+                "sv",
+                "sw",
+                "ta",
+                "te",
+                "tg",
+                "th",
+                "ti",
+                "tk",
+                "tl",
+                "tn",
+                "to",
+                "tr",
+                "ts",
+                "tt",
+                "tw",
+                "ty",
+                "ug",
+                "uk",
+                "ur",
+                "uz",
+                "ve",
+                "vi",
+                "vo",
+                "wa",
+                "wo",
+                "xh",
+                "yi",
+                "yo",
+                "za",
+                "zh",
+                "zu"
+            ],
+            "$comment": "dataType",
+            "$id": "#/definitions/languageEnum"
+        },
+        "latitude": {
+            "description": "Latitude",
+            "type": "string",
+            "pattern": "^[+-]?(([1-8]?[0-9])(\\.[0-9]{1,6})?|90(\\.0{1,6})?)$",
+            "$comment": "dataType",
+            "$id": "#/definitions/latitude"
+        },
+        "license": {
+            "$id": "#/definitions/license",
+            "title": "License",
+            "$comment": "dataElement",
+            "description": "Legal document under which the distribution of data is made available.",
+            "allOf": [
+                {"$ref": "#/definitions/url"}
+            ]
+        },
+        "logo": {
+            "$id": "#/definitions/logo",
+            "title": "Logo",
+            "$comment": "dataElement",
+            "description": "Please provide a logo associated with the Organisation using a valid URL. The following formats will be accepted .jpg, .png or .svg.",
+            "allOf": [
+                {"$ref": "#/definitions/url"}
+            ]
+        },
+        "longitude": {
+            "description": "Longitude",
+            "type": "string",
+            "pattern": "^[+-]?((([1-9]?[0-9]|1[0-7][0-9])(\\.[0-9]{1,6})?)|180(\\.0{1,6})?)$",
+            "$comment": "dataType",
+            "$id": "#/definitions/longitude"
+        },
+        "name": {
+            "$id": "#/definitions/name",
+            "title": "Name",
+            "$comment": "dataElement",
+            "description": "Please provide the name of the publisher.",
+            "allOf": [
+                {"$ref": "#/definitions/80characters"}
+            ]
+        },
+        "organisation": {
+            "$id": "#/definitions/organisation",
+            "type": "object",
+            "title": "Publisher",
+            "$comment": "dataClass",
+            "description": "This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.",
+            "required": [
+                "identifier",
+                "name"
+            ],
+            "properties": {
+                "identifier": {
+                    "$id": "#/organisation/identifier",
+                    "title": "Identifier",
+                    "$comment": "dataElement",
+                    "description": "Please provide an identifier for your organisation.",
+                    "allOf": [
+                        {"$ref": "#/definitions/url"}
+                    ]
+                },
+                "name": {
+                    "$id": "#/organisation/name",
+                    "title": "Name",
+                    "$comment": "dataElement",
+                    "description": "Please provide the name of the publisher.",
+                    "allOf": [
+                        {"$ref": "#/definitions/80characters"}
+                    ]
+                },
+                "logo": {
+                    "$id": "#/organisation/logo",
+                    "title": "Logo",
+                    "$comment": "dataElement",
+                    "description": "Please provide a logo associated with the Organisation using a valid URL. The following formats will be accepted .jpg, .png or .svg.",
+                    "allOf": [
+                        {"$ref": "#/definitions/url"}
+                    ]
+                },
+                "contactPointOrg": {
+                    "$id": "#/organisation/contactPointOrg",
+                    "title": "Contact Point",
+                    "$comment": "dataElement",
+                    "description": "Please provide a valid email address that can be used to coordinate data enquiries with the publisher.\nOrganisations are expected to provide a dedicated email address associated with the data access request process for their organisation.\nThis will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.",
+                    "allOf": [
+                        {"$ref": "#/definitions/emailAddress"}
+                    ]
+                },
+                "description": {
+                    "$id": "#/organisation/description",
+                    "title": "Description",
+                    "$comment": "dataElement",
+                    "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
+                    "allOf": [
+                        {"$ref": "#/definitions/10000characters"}
+                    ]
+                }
+            }
+        },
+        "provenance": {
+            "$id": "#/definitions/provenance",
+            "type": "object",
+            "title": "Provenance",
+            "$comment": "dataClass",
+            "description": "Provenance information allows researchers to understand data within the context of its origins and can be an indicator of quality, authenticity and timeliness.",
+            "properties": {
+                "purpose": {
+                    "$id": "#/provenance/purpose",
+                    "title": "Purpose",
+                    "$comment": "dataElement",
+                    "description": "Please indicate the purpose(s) that the dataset was collected.",
+                    "allOf": [
+                        {"$ref": "#/definitions/3000characters"}
+                    ]
+                },
+                "source": {
+                    "$id": "#/provenance/source",
+                    "title": "Source",
+                    "$comment": "dataElement",
+                    "description": "Please indicate the source of the data extraction.",
+                    "allOf": [
+                        {"$ref": "#/definitions/3000characters"}
+                    ]
+                }
+            }
+        },
+        "publicationDate": {
+            "$id": "#/definitions/publicationDate",
+            "title": "Publication Date",
+            "$comment": "dataElement",
+            "description": "Date the data-model is published.",
+            "allOf": [
+                {"$ref": "#/definitions/date"}
+            ]
+        },
+        "purpose": {
+            "$id": "#/definitions/purpose",
+            "title": "Purpose",
+            "$comment": "dataElement",
+            "description": "Please indicate the purpose(s) that the dataset was collected.",
+            "allOf": [
+                {"$ref": "#/definitions/3000characters"}
+            ]
+        },
+        "references": {
+            "$id": "#/definitions/references",
+            "title": "References",
+            "$comment": "dataElement",
+            "description": "A related resource that is referenced, cited, or otherwise pointed to by the described resource.",
+            "allOf": [
+                {"$ref": "#/definitions/urlList"}
+            ]
+        },
+        "resourceCreator": {
+            "$id": "#/definitions/resourceCreator",
+            "title": "Resource Creator",
+            "$comment": "dataElement",
+            "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
+            "allOf": [
+                {"$ref": "#/definitions/1000charactersList"}
+            ]
+        },
+        "source": {
+            "$id": "#/definitions/source",
+            "title": "Source",
+            "$comment": "dataElement",
+            "description": "Please indicate the source of the data extraction.",
+            "allOf": [
+                {"$ref": "#/definitions/3000characters"}
+            ]
+        },
+        "spatialAggregation": {
+            "$id": "#/definitions/spatialAggregation",
+            "title": "Spatial Aggregation",
+            "$comment": "dataElement",
+            "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
+            "allOf": [
+                {"$ref": "#/definitions/80characters"}
+            ]
+        },
+        "spatialCoverage": {
+            "$id": "#/definitions/spatialCoverage",
+            "title": "Spatial Coverage",
+            "$comment": "dataElement",
+            "description": "A spatial region, area or named place covered by the dataset.",
+            "allOf": [
+                {"$ref": "#/definitions/80characters"}
+            ]
+        },
+        "spatialResolution": {
+            "$id": "#/definitions/spatialResolution",
+            "title": "Spatial Resolution",
+            "$comment": "dataElement",
+            "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
+            "allOf": [
+                {"$ref": "#/definitions/80characters"}
+            ]
+        },
+        "startDate": {
+            "$id": "#/definitions/startDate",
+            "title": "Start Date",
+            "$comment": "dataElement",
+            "description": "The start of the time period that the dataset provides coverage for. \nIf there are multiple cohorts in the dataset with varying start dates, please provide the earliest date and use the description or the media attribute to provide more information.",
+            "allOf": [
+                {"$ref": "#/definitions/date"}
+            ]
+        },
+        "summary": {
+            "$id": "#/definitions/summary",
+            "type": "object",
+            "title": "Summary",
+            "$comment": "dataClass",
+            "description": "Summary metadata must be completed by Data Custodians onboarding metadata.",
+            "required": [
+                "title",
+                "publisher",
+                "abstract",
+                "contactPoint"
+            ],
+            "properties": {
+                "title": {
+                    "$id": "#/summary/title",
+                    "title": "Title",
+                    "$comment": "dataElement",
+                    "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 180 characters or under.",
+                    "allOf": [
+                        {"$ref": "#/definitions/80characters"}
+                    ]
+                },
+                "abstract": {
+                    "$id": "#/summary/abstract",
+                    "title": "Abstract",
+                    "$comment": "dataElement",
+                    "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
+                    "allOf": [
+                        {"$ref": "#/definitions/255characters"}
+                    ]
+                },
+                "contactPoint": {
+                    "$id": "#/summary/contactPoint",
+                    "title": "Contact Point",
+                    "$comment": "dataElement",
+                    "description": "Please provide a valid email address that can be used to coordinate data access requests with the publisher. If an employee/author email address is provided an explicit consent must be obtained for this purpose.",
+                    "allOf": [
+                        {"$ref": "#/definitions/emailAddress"}
+                    ]
+                },
+                "keywords": {
+                    "$id": "#/summary/keywords",
+                    "title": "Keywords",
+                    "$comment": "dataElement",
+                    "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset. \nIPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
+                    "allOf": [
+                        {"$ref": "#/definitions/keywordList"}
+                    ]
+                },
+                "doi": {
+                    "$id": "#/summary/doi",
+                    "title": "DOI name",
+                    "$comment": "dataElement",
+                    "description": "All IPCC DDC registered datasets should either have a Digital Object Identifier (DOI) or be working towards obtaining one. If a DOI is available and has been minted through another system/organisation, please provide the DOI. If there is not a DOI the IPCC DDC can mint a DOI for your dataset.",
+                    "allOf": [
+                        {"$ref": "#/definitions/doi"}
+                    ],
+                    "examples": ["10.3399/bjgp17X692645"]
+                },
+                "alternateIdentifier": {
+                    "$id": "#/summary/alternateIdentifier",
+                    "title": "Alternate Identifier",
+                    "$comment": "dataElement",
+                    "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
+                    "allOf": [
+                        {"$ref": "#/definitions/180characters"}
+                    ]
+                },
+                "publisher": {
+                    "$id": "#/summary/organisation",
+                    "title": "Publisher",
+                    "description": "This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.",
+                    "allOf": [
+                        {"$ref": "#/definitions/organisation"}
+                    ]
+                },
+                "publicationDate": {
+                    "$id": "#/definitions/publicationDate",
+                    "title": "Publication Date",
+                    "$comment": "dataElement",
+                    "description": "Date the data-model is published.",
+                    "allOf": [
+                        {"$ref": "#/definitions/date"}
+                    ]
+                }
+            }
+        },
+        "temporalResolution": {
+            "$id": "#/definitions/temporalResolution",
+            "title": "Temporal Resolution",
+            "$comment": "dataElement",
+            "description": "Minimum time period resolvable in the dataset distribution.",
+            "allOf": [
+                {"$ref": "#/definitions/temporalResolutionEnum"}
+            ]
+        },
+        "temporalResolutionEnum": {
+            "description": "Temporal Resolution",
+            "type": "string",
+            "enum": [
+                "6HOURLY",
+                "ANNUAL",
+                "BIANNUAL",
+                "BIMONTHLY",
+                "BIWEEKLY",
+                "DAILY",
+                "HOURLY",
+                "MONTHLY",
+                "OTHER",
+                "QUARTERLY",
+                "SEASONALLY",
+                "SEMIWEEKLY",
+                "STATIC",
+                "WEEKLY"
+            ],
+            "$comment": "dataType",
+            "$id": "#/definitions/temporalResolutionEnum"
+        },
+        "url": {
+            "description": "URL",
+            "type": "string",
+            "format": "uri",
+            "$comment": "dataType",
+            "$id": "#/definitions/url"
+        },
+        "urlList": {
+            "description": "List of URLs",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "allOf": [
+                    {"$ref": "#/definitions/url"}
+                ]
+            },
+            "$comment": "dataType",
+            "$id": "#/definitions/urlList"
+        },
+        "usage": {
+            "$id": "#/definitions/usage",
+            "type": "object",
+            "title": "Usage",
+            "$comment": "dataClass",
+            "description": "This section includes information about how the data can be used and how it is currently being used.",
+            "properties": {
+                "license": {
+                    "$id": "#/usage/license",
+                    "title": "License",
+                    "$comment": "dataElement",
+                    "description": "Legal document under which the distribution of data is made available.",
+                    "allOf": [
+                        {"$ref": "#/definitions/url"}
+                    ]
+                },
+                "resourceCreator": {
+                    "$id": "#/usage/resourceCreator",
+                    "title": "Resource Creator",
+                    "$comment": "dataElement",
+                    "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
+                    "allOf": [
+                        {"$ref": "#/definitions/1000charactersList"}
+                    ]
+                },
+                "investigations": {
+                    "$id": "#/usage/investigations",
+                    "title": "Investigations",
+                    "$comment": "dataElement",
+                    "description": "Please provide a link to any active or unpublished projects that are using the dataset.",
+                    "allOf": [
+                        {"$ref": "#/definitions/urlList"}
+                    ]
+                },
+                "isReferencedBy": {
+                    "$id": "#/usage/isReferencedBy",
+                    "title": "Is Referenced By",
+                    "$comment": "dataElement",
+                    "description": "Please provide the keystone paper associated with the dataset. Also include a list of known citations, if available, and should be links to existing resources where the dataset has been used or referenced.",
+                    "allOf": [
+                        {"$ref": "#/definitions/urlList"}
+                    ]
+                },
+                "references": {
+                    "$id": "#/usage/references",
+                    "title": "References",
+                    "$comment": "dataElement",
+                    "description": "A related resource that is referenced, cited, or otherwise pointed to by the described resource.",
+                    "allOf": [
+                        {"$ref": "#/definitions/urlList"}
+                    ]
+                }
+            }
+        }
+    }
+}
