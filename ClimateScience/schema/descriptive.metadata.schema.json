@@ -1098,33 +1098,6 @@
                 {"$ref": "#/definitions/date"}
             ]
         },
-        "spatialAggregation": {
-            "$id": "#/definitions/spatialAggregation",
-            "title": "Spatial Aggregation",
-            "$comment": "dataElement",
-            "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
-            "allOf": [
-                {"$ref": "#/definitions/characters80"}
-            ]
-        },
-        "spatialCoverage": {
-            "$id": "#/definitions/spatialCoverage",
-            "title": "Spatial Coverage",
-            "$comment": "dataElement",
-            "description": "A spatial region, area or named place covered by the dataset.",
-            "allOf": [
-                {"$ref": "#/definitions/characters80"}
-            ]
-        },
-        "spatialResolution": {
-            "$id": "#/definitions/spatialResolution",
-            "title": "Spatial Resolution",
-            "$comment": "dataElement",
-            "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
-            "allOf": [
-                {"$ref": "#/definitions/characters80"}
-            ]
-        },
         "startDate": {
             "$id": "#/definitions/startDate",
             "title": "Start Date",
