@@ -1098,24 +1098,6 @@
                 {"$ref": "#/definitions/date"}
             ]
         },
-        "purpose": {
-            "$id": "#/definitions/purpose",
-            "title": "Purpose",
-            "$comment": "dataElement",
-            "description": "Please indicate the purpose(s) that the dataset was collected.",
-            "allOf": [
-                {"$ref": "#/definitions/characters3000"}
-            ]
-        },
-        "source": {
-            "$id": "#/definitions/source",
-            "title": "Source",
-            "$comment": "dataElement",
-            "description": "Please indicate the source of the data extraction.",
-            "allOf": [
-                {"$ref": "#/definitions/characters3000"}
-            ]
-        },
         "spatialAggregation": {
             "$id": "#/definitions/spatialAggregation",
             "title": "Spatial Aggregation",
