@@ -311,15 +311,6 @@
                 {"$ref": "#/definitions/characters80"}
             ]
         },
-        "associatedMedia": {
-            "$id": "#/definitions/associatedMedia",
-            "title": "Associated Media",
-            "$comment": "dataElement",
-            "description": "Please provide any media associated with the dataset using a valid URI for the content. This is an opportunity to provide additional context that could be useful for researchers wanting to understand more about the dataset and its relevance to their research question.\nThe following formats will be previewed .jpg, .png or .svg, .pdf, .xslx or .docx. Other formats can be used as url links.\nNote: media asset can be hosted by the organisation or uploaded.",
-            "allOf": [
-                {"$ref": "#/definitions/urlList"}
-            ]
-        },
         "contactPoint": {
             "$id": "#/definitions/contactPoint",
             "title": "Contact Point",
@@ -416,15 +407,6 @@
             "format": "date",
             "$comment": "dataType",
             "$id": "#/definitions/date"
-        },
-        "description": {
-            "$id": "#/definitions/description",
-            "title": "Description",
-            "$comment": "dataElement",
-            "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
-            "allOf": [
-                {"$ref": "#/definitions/characters10000"}
-            ]
         },
         "documentation": {
             "$id": "#/definitions/documentation",
@@ -547,15 +529,6 @@
             "description": "Please provide an identifier for your organisation.",
             "allOf": [
                 {"$ref": "#/definitions/url"}
-            ]
-        },
-        "isPartOf": {
-            "$id": "#/definitions/isPartOf",
-            "title": "Is Part Of",
-            "$comment": "dataElement",
-            "description": "Please complete only if the dataset is part of a group or collection of datasets.",
-            "allOf": [
-                {"$ref": "#/definitions/characters80"}
             ]
         },
         "isoCountryCodeEnum": {
