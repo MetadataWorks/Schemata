@@ -354,6 +354,9 @@
             "title": "Coverage",
             "$comment": "dataClass",
             "description": "This information includes attributes for geographical and temporal coverage, cohort details etc. to enable a deeper understanding of the dataset content so that researchers can make decisions about the relevance of the underlying data.",
+            "required": [
+                "startDate"
+            ],
             "properties": {
                 "spatialCoverage": {
                     "$id": "#/coverage/spatialCoverage",
