@@ -567,15 +567,6 @@
                 {"$ref": "#/definitions/characters80"}
             ]
         },
-        "isReferencedBy": {
-            "$id": "#/definitions/isReferencedBy",
-            "title": "Is Referenced By",
-            "$comment": "dataElement",
-            "description": "Please provide the keystone paper associated with the dataset. Also include a list of known citations, if available, and should be links to existing resources where the dataset has been used or referenced.",
-            "allOf": [
-                {"$ref": "#/definitions/urlList"}
-            ]
-        },
         "isoCountryCodeEnum": {
             "$id": "#/definitions/isoCountryCodeEnum",
             "type": "string",
