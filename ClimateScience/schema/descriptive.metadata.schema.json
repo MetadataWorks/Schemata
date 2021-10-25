@@ -824,15 +824,6 @@
             "$comment": "dataType",
             "$id": "#/definitions/keywordList"
         },
-        "keywords": {
-            "$id": "#/definitions/keywords",
-            "title": "Keywords",
-            "$comment": "dataElement",
-            "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset. \nIPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
-            "allOf": [
-                {"$ref": "#/definitions/keywordList"}
-            ]
-        },
         "language": {
             "$id": "#/definitions/language",
             "title": "Language",
