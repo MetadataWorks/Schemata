@@ -158,13 +158,21 @@
             "$comment": "dataType",
             "$id": "#/definitions/characters10000"
         },
+        "characters1000": {
+            "$id": "#/definitions/characters1000",
+            "description": "10000 Character Text",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 1000,
+            "$comment": "dataType"
+        },
         "characters1000List": {
             "description": "List of 1000 Characters",
             "type": "array",
             "uniqueItems": true,
             "items": {
                 "allOf": [
-                    {"$ref": "#/definitions/characters10000"}
+                    {"$ref": "#/definitions/characters1000"}
                 ]
             },
             "$comment": "dataType",
@@ -523,6 +531,12 @@
             "title": "Geographic Bounding Box",
             "$comment": "dataClass",
             "description": "The geographic bounding box describes the spatial coverage in terms of a square as specified by the longitude and latitude values of the lower left and upper right corners.\nPlease enter the four values in terms of degrees North or East, with longitudes given relative to the prime meridian (yielding values between -180E and 180E).\nNote that a \"north up\" area is described so that generally the upper right longitude will be greater than the lower left longitude.",
+            "required": [
+                "lowerLeftLatitude",
+                "lowerLeftLongitude",
+                "upperRightLatitude",
+                "upperRightLongitude"
+            ],
             "properties": {
                 "lowerLeftLatitude": {
                     "$id": "#/geographicBoundingBox/lowerLeftLatitude",
@@ -560,13 +574,7 @@
                         {"$ref": "#/definitions/longitude"}
                     ]
                 }
-            },
-            "required": [
-                "lowerLeftLatitude",
-                "lowerLeftLongitude",
-                "upperRightLatitude",
-                "upperRightLongitude"
-            ]
+            }
         },
         "identifier": {
             "$id": "#/definitions/identifier",
