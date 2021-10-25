@@ -558,15 +558,6 @@
                 {"$ref": "#/definitions/url"}
             ]
         },
-        "investigations": {
-            "$id": "#/definitions/investigations",
-            "title": "Investigations",
-            "$comment": "dataElement",
-            "description": "Please provide a link to any active or unpublished projects that are using the dataset.",
-            "allOf": [
-                {"$ref": "#/definitions/urlList"}
-            ]
-        },
         "isPartOf": {
             "$id": "#/definitions/isPartOf",
             "title": "Is Part Of",
