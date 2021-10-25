@@ -1073,7 +1073,6 @@
             "$comment": "dataClass",
             "description": "This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.",
             "required": [
-                "identifier",
                 "name"
             ],
             "properties": {
