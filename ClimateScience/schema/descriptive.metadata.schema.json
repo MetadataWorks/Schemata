@@ -804,15 +804,6 @@
             ],
             "$comment": "dataType"
         },
-        "jurisdiction": {
-            "$id": "#/definitions/jurisdiction",
-            "title": "Jurisdiction",
-            "$comment": "dataElement",
-            "description": "Please use country code from ISO 3166-1 country codes and the associated ISO 3166-2 for regions, cities, states etc. for the country/state under whose laws the data subjects\u2019 data is collected, processed and stored. Multiple Jurisdictions may be provided (if applicable).",
-            "allOf": [
-                {"$ref": "#/definitions/isoCountryCodeEnum"}
-            ]
-        },
         "keywordList": {
             "description": "List of Keywords",
             "type": "array",
