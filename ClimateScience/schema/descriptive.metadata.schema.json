@@ -281,15 +281,6 @@
                 }
             }
         },
-        "accessService": {
-            "$id": "#/definitions/accessService",
-            "title": "Access Service",
-            "$comment": "dataElement",
-            "description": "Please provide a brief description of the environment where data can be accessed by researchers.\nIf no environment is currently available, please indicate the current plans and timelines when the data will be made available through an access environment or process.",
-            "allOf": [
-                {"$ref": "#/definitions/characters5000"}
-            ]
-        },
         "accessURL": {
             "$id": "#/definitions/accessURL",
             "title": "Access URL",
