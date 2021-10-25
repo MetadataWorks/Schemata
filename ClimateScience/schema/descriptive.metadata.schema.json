@@ -476,15 +476,6 @@
             "$comment": "dataType",
             "$id": "#/definitions/emailAddress"
         },
-        "endDate": {
-            "$id": "#/definitions/endDate",
-            "title": "End Date",
-            "$comment": "dataElement",
-            "description": "The end of the time period that the dataset provides coverage for.  \nIf the dataset is \u201cContinuous\u201d and has no known end date, please leave blank. \nIf there are multiple cohorts in the dataset with varying end dates, please provide the latest date and use the description or the media attribute to provide more information.",
-            "allOf": [
-                {"$ref": "#/definitions/date"}
-            ]
-        },
         "formatEnum": {
             "description": "Enumeration for File Format",
             "type": "array",
@@ -1094,15 +1085,6 @@
             "title": "Publication Date",
             "$comment": "dataElement",
             "description": "Date the data-model is published.",
-            "allOf": [
-                {"$ref": "#/definitions/date"}
-            ]
-        },
-        "startDate": {
-            "$id": "#/definitions/startDate",
-            "title": "Start Date",
-            "$comment": "dataElement",
-            "description": "The start of the time period that the dataset provides coverage for. \nIf there are multiple cohorts in the dataset with varying start dates, please provide the earliest date and use the description or the media attribute to provide more information.",
             "allOf": [
                 {"$ref": "#/definitions/date"}
             ]
