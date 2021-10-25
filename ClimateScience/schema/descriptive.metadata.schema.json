@@ -218,15 +218,6 @@
             "$comment": "dataType",
             "$id": "#/definitions/characters80"
         },
-        "abstract": {
-            "$id": "#/definitions/abstract",
-            "title": "Abstract",
-            "$comment": "dataElement",
-            "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
-            "allOf": [
-                {"$ref": "#/definitions/characters255"}
-            ]
-        },
         "access": {
             "$id": "#/definitions/access",
             "type": "object",
@@ -301,33 +292,6 @@
                     "$ref": "#/definitions/access"
                 }
             }
-        },
-        "alternateIdentifier": {
-            "$id": "#/definitions/alternateIdentifier",
-            "title": "Alternate Identifier",
-            "$comment": "dataElement",
-            "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
-            "allOf": [
-                {"$ref": "#/definitions/characters80"}
-            ]
-        },
-        "contactPoint": {
-            "$id": "#/definitions/contactPoint",
-            "title": "Contact Point",
-            "$comment": "dataElement",
-            "description": "Please provide a valid email address that can be used to coordinate data access requests with the publisher. If an employee/author email address is provided an explicit consent must be obtained for this purpose.",
-            "allOf": [
-                {"$ref": "#/definitions/emailAddress"}
-            ]
-        },
-        "contactPointOrg": {
-            "$id": "#/definitions/contactPointOrg",
-            "title": "Contact Point",
-            "$comment": "dataElement",
-            "description": "Please provide a valid email address that can be used to coordinate data enquiries with the publisher.\nOrganisations are expected to provide a dedicated email address associated with the data access request process for their organisation.\nThis will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.",
-            "allOf": [
-                {"$ref": "#/definitions/emailAddress"}
-            ]
         },
         "coverage": {
             "$id": "#/definitions/coverage",
@@ -521,15 +485,6 @@
                     ]
                 }
             }
-        },
-        "identifier": {
-            "$id": "#/definitions/identifier",
-            "title": "Identifier",
-            "$comment": "dataElement",
-            "description": "Please provide an identifier for your organisation.",
-            "allOf": [
-                {"$ref": "#/definitions/url"}
-            ]
         },
         "isoCountryCodeEnum": {
             "$id": "#/definitions/isoCountryCodeEnum",
@@ -944,30 +899,12 @@
             "$comment": "dataType",
             "$id": "#/definitions/latitude"
         },
-        "logo": {
-            "$id": "#/definitions/logo",
-            "title": "Logo",
-            "$comment": "dataElement",
-            "description": "Please provide a logo associated with the Organisation using a valid URL. The following formats will be accepted .jpg, .png or .svg.",
-            "allOf": [
-                {"$ref": "#/definitions/url"}
-            ]
-        },
         "longitude": {
             "description": "Longitude",
             "type": "string",
             "pattern": "^[+-]?((([1-9]?[0-9]|1[0-7][0-9])(\\.[0-9]{1,6})?)|180(\\.0{1,6})?)$",
             "$comment": "dataType",
             "$id": "#/definitions/longitude"
-        },
-        "name": {
-            "$id": "#/definitions/name",
-            "title": "Name",
-            "$comment": "dataElement",
-            "description": "Please provide the name of the publisher.",
-            "allOf": [
-                {"$ref": "#/definitions/characters80"}
-            ]
         },
         "organisation": {
             "$id": "#/definitions/organisation",
@@ -1052,15 +989,6 @@
                     ]
                 }
             }
-        },
-        "publicationDate": {
-            "$id": "#/definitions/publicationDate",
-            "title": "Publication Date",
-            "$comment": "dataElement",
-            "description": "Date the data-model is published.",
-            "allOf": [
-                {"$ref": "#/definitions/date"}
-            ]
         },
         "summary": {
             "$id": "#/definitions/summary",
