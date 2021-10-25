@@ -1107,15 +1107,6 @@
                 {"$ref": "#/definitions/characters3000"}
             ]
         },
-        "references": {
-            "$id": "#/definitions/references",
-            "title": "References",
-            "$comment": "dataElement",
-            "description": "A related resource that is referenced, cited, or otherwise pointed to by the described resource.",
-            "allOf": [
-                {"$ref": "#/definitions/urlList"}
-            ]
-        },
         "source": {
             "$id": "#/definitions/source",
             "title": "Source",
