@@ -119,10 +119,6 @@
         "enrichmentAndLinkage": {
             "$id": "#/definitions/enrichmentAndLinkage",
             "type": "object",
-            "required": [
-                "qualifiedRelations",
-                "tools"
-            ],
             "properties": {
                 "qualifiedRelations": {
                     "$id": "#enrichmentAndLinkage/qualifiedRelations",
