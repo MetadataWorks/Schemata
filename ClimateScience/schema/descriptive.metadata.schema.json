@@ -1118,7 +1118,7 @@
                     "$comment": "dataElement",
                     "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
                     "allOf": [
-                        {"$ref": "#/definitions/characters10000"}
+                        {"$ref": "#/definitions/url"}
                     ]
                 }
             }
