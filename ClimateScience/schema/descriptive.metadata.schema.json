@@ -147,12 +147,12 @@
             "maxLength": 36
         },
         "characters10000": {
+            "$id": "#/definitions/characters10000",
             "description": "10000 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 10000,
-            "$comment": "dataType",
-            "$id": "#/definitions/characters10000"
+            "$comment": "dataType"
         },
         "characters1000": {
             "$id": "#/definitions/characters1000",
@@ -163,6 +163,7 @@
             "$comment": "dataType"
         },
         "characters1000List": {
+            "$id": "#/definitions/characters1000List",
             "description": "List of 1000 Characters",
             "type": "array",
             "uniqueItems": true,
@@ -171,48 +172,47 @@
                     {"$ref": "#/definitions/characters1000"}
                 ]
             },
-            "$comment": "dataType",
-            "$id": "#/definitions/characters1000List"
+            "$comment": "dataType"
         },
         "characters180": {
+            "$id": "#/definitions/characters80",
             "description": "180 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 180,
-            "$comment": "dataType",
-            "$id": "#/definitions/characters80"
+            "$comment": "dataType"
         },
         "characters255": {
+            "$id": "#/definitions/characters255",
             "description": "255 Character Text",
             "type": "string",
             "minLength": 5,
             "maxLength": 255,
-            "$comment": "dataType",
-            "$id": "#/definitions/characters255"
+            "$comment": "dataType"
         },
         "characters3000": {
+            "$id": "#/definitions/characters3000",
             "description": "3000 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 3000,
-            "$comment": "dataType",
-            "$id": "#/definitions/characters3000"
+            "$comment": "dataType"
         },
         "characters5000": {
+            "$id": "#/definitions/characters5000",
             "description": "5000 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 5000,
-            "$comment": "dataType",
-            "$id": "#/definitions/characters5000"
+            "$comment": "dataType"
         },
         "characters80": {
+            "$id": "#/definitions/characters80",
             "description": "80 Character Text",
             "type": "string",
             "minLength": 2,
             "maxLength": 80,
-            "$comment": "dataType",
-            "$id": "#/definitions/characters80"
+            "$comment": "dataType"
         },
         "access": {
             "$id": "#/definitions/access",
@@ -226,9 +226,7 @@
                     "title": "Access URL",
                     "$comment": "dataElement",
                     "description": "A URL of the resource that gives access to a distribution of the dataset. E.g. landing page, download link, service desk request.",
-                    "allOf": [
-                        {"$ref": "#/definitions/urlList"}
-                    ]
+                    "$ref": "#/definitions/urlList"
                 },
                 "accessService": {
                     "$id": "#/access/accessService",
@@ -244,27 +242,21 @@
                     "title": "Jurisdiction",
                     "$comment": "dataElement",
                     "description": "Please use country code from ISO 3166-1 country codes and the associated ISO 3166-2 for regions, cities, states etc. for the country/state under whose laws the data subjects\u2019 data is collected, processed and stored. Multiple Jurisdictions may be provided (if applicable).",
-                    "allOf": [
-                        {"$ref": "#/definitions/isoCountryCodeEnum"}
-                    ]
+                    "$ref": "#/definitions/isoCountryCodeEnum"
                 },
                 "language": {
                     "$id": "#/access/language",
                     "title": "Language",
                     "$comment": "dataElement",
                     "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
-                    "allOf": [
-                        {"$ref": "#/definitions/languageEnum"}
-                    ]
+                    "$ref": "#/definitions/languageEnum"
                 },
                 "format": {
                     "$id": "#/access/format",
                     "title": "Format",
                     "$comment": "dataElement",
                     "description": "The file format of the distribution.",
-                    "allOf": [
-                        {"$ref": "#/definitions/formatEnum"}
-                    ]
+                    "$ref": "#/definitions/formatEnum"
                 }
             }
         },
@@ -304,54 +296,42 @@
                     "title": "Spatial Coverage",
                     "$comment": "dataElement",
                     "description": "A spatial region, area or named place covered by the dataset.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters80"}
-                    ]
+                    "$ref": "#/definitions/characters80"
                 },
                 "spatialAggregation": {
                     "$id": "#/coverage/spatialAggregation",
                     "title": "Spatial Aggregation",
                     "$comment": "dataElement",
                     "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters80"}
-                    ]
+                    "$ref": "#/definitions/characters80"
                 },
                 "spatialResolution": {
                     "$id": "#/coverage/spatialResolution",
                     "title": "Spatial Resolution",
                     "$comment": "dataElement",
                     "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters80"}
-                    ]
+                    "$ref": "#/definitions/characters80"
                 },
                 "startDate": {
                     "$id": "#/coverage/startDate",
                     "title": "Start Date",
                     "$comment": "dataElement",
                     "description": "The start of the time period that the dataset provides coverage for. \nIf there are multiple cohorts in the dataset with varying start dates, please provide the earliest date and use the description or the media attribute to provide more information.",
-                    "allOf": [
-                        {"$ref": "#/definitions/date"}
-                    ]
+                    "$ref": "#/definitions/date"
                 },
                 "endDate": {
                     "$id": "#/coverage/endDate",
                     "title": "End Date",
                     "$comment": "dataElement",
                     "description": "The end of the time period that the dataset provides coverage for.  \nIf the dataset is \u201cContinuous\u201d and has no known end date, please leave blank. \nIf there are multiple cohorts in the dataset with varying end dates, please provide the latest date and use the description or the media attribute to provide more information.",
-                    "allOf": [
-                        {"$ref": "#/definitions/date"}
-                    ]
+                    "$ref": "#/definitions/date"
                 },
                 "temporalResolution": {
                     "$id": "#/coverage/temporalResolution",
                     "title": "Temporal Resolution",
                     "$comment": "dataElement",
                     "description": "Minimum time period resolvable in the dataset distribution.",
-                    "allOf": [
-                        {"$ref": "#/definitions/temporalResolutionEnum"}
-                    ]
+                    "$ref": "#/definitions/temporalResolutionEnum"
                 },
                 "geographicBoundingBox": {
                     "$id": "#/coverage/geographicBoundingBox",
@@ -362,11 +342,11 @@
             }
         },
         "date": {
+            "$id": "#/definitions/date",
             "description": "Date",
             "type": "string",
             "format": "date",
-            "$comment": "dataType",
-            "$id": "#/definitions/date"
+            "$comment": "dataType"
         },
         "documentation": {
             "$id": "#/definitions/documentation",
@@ -380,45 +360,40 @@
                     "title": "Description",
                     "$comment": "dataElement",
                     "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters10000"}
-                    ]
+                    "$ref": "#/definitions/characters10000"
                 },
                 "isPartOf": {
                     "$id": "#/documentation/isPartOf",
                     "title": "Is Part Of",
                     "$comment": "dataElement",
                     "description": "Please complete only if the dataset is part of a group or collection of datasets.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters80"}
-                    ]
+                    "$ref": "#/definitions/characters80"
                 },
                 "associatedMedia": {
                     "$id": "#/documentation/associatedMedia",
                     "title": "Associated Media",
                     "$comment": "dataElement",
                     "description": "Please provide any media associated with the dataset using a valid URI for the content. This is an opportunity to provide additional context that could be useful for researchers wanting to understand more about the dataset and its relevance to their research question.\nThe following formats will be previewed .jpg, .png or .svg, .pdf, .xslx or .docx. Other formats can be used as url links.\nNote: media asset can be hosted by the organisation or uploaded.",
-                    "allOf": [
-                        {"$ref": "#/definitions/urlList"}
-                    ]
+                    "$ref": "#/definitions/urlList"
                 }
             }
         },
         "doi": {
+            "$id": "#/definitions/doi",
             "description": "DOI format",
             "type": "string",
             "pattern": "^10.\\d{4,9}/[-._;()/:a-zA-Z0-9]+$",
-            "$comment": "dataType",
-            "$id": "#/definitions/doi"
+            "$comment": "dataType"
         },
         "emailAddress": {
+            "$id": "#/definitions/emailAddress",
             "description": "Email Address",
             "type": "string",
             "format": "email",
-            "$comment": "dataType",
-            "$id": "#/definitions/emailAddress"
+            "$comment": "dataType"
         },
         "formatEnum": {
+            "$id": "#/definitions/formatEnum",
             "description": "Enumeration for File Format",
             "type": "array",
             "uniqueItems": true,
@@ -428,8 +403,7 @@
                     {"$ref": "#/definitions/characters80"}
                 ]
             },
-            "$comment": "dataType",
-            "$id": "#/definitions/formatEnum"
+            "$comment": "dataType"
         },
         "geographicBoundingBox": {
             "$id": "#/definitions/geographicBoundingBox",
@@ -449,36 +423,28 @@
                     "title": "Lower Left Latitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. The lower left latitude will be smaller than the upper right latitude.",
-                    "allOf": [
-                        {"$ref": "#/definitions/latitude"}
-                    ]
+                    "$ref": "#/definitions/latitude"
                 },
                 "lowerLeftLongitude": {
                     "$id": "#/geographicBoundingBox/lowerLeftLongitude",
                     "title": "Lower Left Longitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. Generally the lower left longitude will be smaller than the upper right longitude. However when the area crosses the 180° meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.",
-                    "allOf": [
-                        {"$ref": "#/definitions/longitude"}
-                    ]
+                    "$ref": "#/definitions/longitude"
                 },
                 "upperRightLatitude": {
                     "$id": "#/geographicBoundingBox/upperRightLatitude",
                     "title": "Upper Right Latitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. Upper right latitude will be greater than the lower left latitude.",
-                    "allOf": [
-                        {"$ref": "#/definitions/latitude"}
-                    ]
+                    "$ref": "#/definitions/latitude"
                 },
                 "upperRightLongitude": {
                     "$id": "#/geographicBoundingBox/upperRightLongitude",
                     "title": "Upper Right Longitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. Generally the upper right longitude will be greater than the lower left longitude. However when the area crosses the 180° meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.",
-                    "allOf": [
-                        {"$ref": "#/definitions/longitude"}
-                    ]
+                    "$ref": "#/definitions/longitude"
                 }
             }
         },
@@ -684,6 +650,7 @@
             "$comment": "dataType"
         },
         "keywordList": {
+            "$id": "#/definitions/keywordList",
             "description": "List of Keywords",
             "type": "array",
             "uniqueItems": true,
@@ -693,10 +660,10 @@
                     {"$ref": "#/definitions/characters80"}
                 ]
             },
-            "$comment": "dataType",
-            "$id": "#/definitions/keywordList"
+            "$comment": "dataType"
         },
         "languageEnum": {
+            "$id": "#/definitions/languageEnum",
             "description": "Enumeration for Languages",
             "type": "string",
             "enum": [
@@ -885,22 +852,21 @@
                 "zh",
                 "zu"
             ],
-            "$comment": "dataType",
-            "$id": "#/definitions/languageEnum"
+            "$comment": "dataType"
         },
         "latitude": {
+            "$id": "#/definitions/latitude",
             "description": "Latitude",
             "type": "string",
             "pattern": "^[+-]?(([1-8]?[0-9])(\\.[0-9]{1,6})?|90(\\.0{1,6})?)$",
-            "$comment": "dataType",
-            "$id": "#/definitions/latitude"
+            "$comment": "dataType"
         },
         "longitude": {
+             "$id": "#/definitions/longitude",
             "description": "Longitude",
             "type": "string",
             "pattern": "^[+-]?((([1-9]?[0-9]|1[0-7][0-9])(\\.[0-9]{1,6})?)|180(\\.0{1,6})?)$",
-            "$comment": "dataType",
-            "$id": "#/definitions/longitude"
+            "$comment": "dataType"
         },
         "organisation": {
             "$id": "#/definitions/organisation",
@@ -917,45 +883,35 @@
                     "title": "Identifier",
                     "$comment": "dataElement",
                     "description": "Please provide an identifier for your organisation.",
-                    "allOf": [
-                        {"$ref": "#/definitions/url"}
-                    ]
+                    "$ref": "#/definitions/url"
                 },
                 "name": {
                     "$id": "#/organisation/name",
                     "title": "Name",
                     "$comment": "dataElement",
                     "description": "Please provide the name of the publisher.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters80"}
-                    ]
+                    "$ref": "#/definitions/characters80"
                 },
                 "logo": {
                     "$id": "#/organisation/logo",
                     "title": "Logo",
                     "$comment": "dataElement",
                     "description": "Please provide a logo associated with the Organisation using a valid URL. The following formats will be accepted .jpg, .png or .svg.",
-                    "allOf": [
-                        {"$ref": "#/definitions/url"}
-                    ]
+                    "$ref": "#/definitions/url"
                 },
                 "contactPointOrg": {
                     "$id": "#/organisation/contactPointOrg",
                     "title": "Contact Point",
                     "$comment": "dataElement",
                     "description": "Please provide a valid email address that can be used to coordinate data enquiries with the publisher.\nOrganisations are expected to provide a dedicated email address associated with the data access request process for their organisation.\nThis will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.",
-                    "allOf": [
-                        {"$ref": "#/definitions/emailAddress"}
-                    ]
+                    "$ref": "#/definitions/emailAddress"
                 },
                 "description": {
                     "$id": "#/organisation/description",
                     "title": "Description",
                     "$comment": "dataElement",
                     "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
-                    "allOf": [
-                        {"$ref": "#/definitions/url"}
-                    ]
+                    "$ref": "#/definitions/url"
                 }
             }
         },
@@ -971,18 +927,14 @@
                     "title": "Purpose",
                     "$comment": "dataElement",
                     "description": "Please indicate the purpose(s) that the dataset was collected.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters3000"}
-                    ]
+                    "$ref": "#/definitions/characters3000"
                 },
                 "source": {
                     "$id": "#/provenance/source",
                     "title": "Source",
                     "$comment": "dataElement",
                     "description": "Please indicate the source of the data extraction.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters3000"}
-                    ]
+                    "$ref": "#/definitions/characters3000"
                 }
             }
         },
@@ -1004,45 +956,35 @@
                     "title": "Title",
                     "$comment": "dataElement",
                     "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 180 characters or under.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters180"}
-                    ]
+                    "$ref": "#/definitions/characters180"
                 },
                 "abstract": {
                     "$id": "#/summary/abstract",
                     "title": "Abstract",
                     "$comment": "dataElement",
                     "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters255"}
-                    ]
+                    "$ref": "#/definitions/characters255"
                 },
                 "contactPoint": {
                     "$id": "#/summary/contactPoint",
                     "title": "Contact Point",
                     "$comment": "dataElement",
                     "description": "Please provide a valid email address that can be used to coordinate data access requests with the publisher. If an employee/author email address is provided an explicit consent must be obtained for this purpose.",
-                    "allOf": [
-                        {"$ref": "#/definitions/emailAddress"}
-                    ]
+                    "$ref": "#/definitions/emailAddress"
                 },
                 "keywords": {
                     "$id": "#/summary/keywords",
                     "title": "Keywords",
                     "$comment": "dataElement",
                     "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset. \nIPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
-                    "allOf": [
-                        {"$ref": "#/definitions/keywordList"}
-                    ]
+                    "$ref": "#/definitions/keywordList"
                 },
                 "doi": {
                     "$id": "#/summary/doi",
                     "title": "DOI name",
                     "$comment": "dataElement",
                     "description": "All IPCC DDC registered datasets should either have a Digital Object Identifier (DOI) or be working towards obtaining one. If a DOI is available and has been minted through another system/organisation, please provide the DOI. If there is not a DOI the IPCC DDC can mint a DOI for your dataset.",
-                    "allOf": [
-                        {"$ref": "#/definitions/doi"}
-                    ],
+                    "$ref": "#/definitions/doi",
                     "examples": ["10.3399/bjgp17X692645"]
                 },
                 "alternateIdentifier": {
@@ -1050,26 +992,20 @@
                     "title": "Alternate Identifier",
                     "$comment": "dataElement",
                     "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters180"}
-                    ]
+                    "$ref": "#/definitions/characters180"
                 },
                 "publisher": {
                     "$id": "#/summary/organisation",
                     "title": "Publisher",
                     "description": "This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.",
-                    "allOf": [
-                        {"$ref": "#/definitions/organisation"}
-                    ]
+                    "$ref": "#/definitions/organisation"
                 },
                 "publicationDate": {
                     "$id": "#/definitions/publicationDate",
                     "title": "Publication Date",
                     "$comment": "dataElement",
                     "description": "Date the data-model is published.",
-                    "allOf": [
-                        {"$ref": "#/definitions/date"}
-                    ]
+                    "$ref": "#/definitions/date"
                 }
             }
         },
@@ -1096,11 +1032,11 @@
             "$comment": "dataType"
         },
         "url": {
+            "$id": "#/definitions/url",
             "description": "URL",
             "type": "string",
             "format": "uri",
-            "$comment": "dataType",
-            "$id": "#/definitions/url"
+            "$comment": "dataType"
         },
         "urlList": {
             "$id": "#/definitions/urlList",
@@ -1126,45 +1062,35 @@
                     "title": "License",
                     "$comment": "dataElement",
                     "description": "Legal document under which the distribution of data is made available.",
-                    "allOf": [
-                        {"$ref": "#/definitions/url"}
-                    ]
+                    "$ref": "#/definitions/url"
                 },
                 "resourceCreator": {
                     "$id": "#/usage/resourceCreator",
                     "title": "Resource Creator",
                     "$comment": "dataElement",
                     "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters1000List"}
-                    ]
+                    "$ref": "#/definitions/characters1000List"
                 },
                 "investigations": {
                     "$id": "#/usage/investigations",
                     "title": "Investigations",
                     "$comment": "dataElement",
                     "description": "Please provide a link to any active or unpublished projects that are using the dataset.",
-                    "allOf": [
-                        {"$ref": "#/definitions/urlList"}
-                    ]
+                    "$ref": "#/definitions/urlList"
                 },
                 "isReferencedBy": {
                     "$id": "#/usage/isReferencedBy",
                     "title": "Is Referenced By",
                     "$comment": "dataElement",
                     "description": "Please provide the keystone paper associated with the dataset. Also include a list of known citations, if available, and should be links to existing resources where the dataset has been used or referenced.",
-                    "allOf": [
-                        {"$ref": "#/definitions/urlList"}
-                    ]
+                    "$ref": "#/definitions/urlList"
                 },
                 "references": {
                     "$id": "#/usage/references",
                     "title": "References",
                     "$comment": "dataElement",
                     "description": "A related resource that is referenced, cited, or otherwise pointed to by the described resource.",
-                    "allOf": [
-                        {"$ref": "#/definitions/urlList"}
-                    ]
+                    "$ref": "#/definitions/urlList"
                 }
             }
         }
