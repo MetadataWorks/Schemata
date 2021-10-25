@@ -503,15 +503,6 @@
                 {"$ref": "#/definitions/date"}
             ]
         },
-        "format": {
-            "$id": "#/definitions/format",
-            "title": "Format",
-            "$comment": "dataElement",
-            "description": "The file format of the distribution.",
-            "allOf": [
-                {"$ref": "#/definitions/formatEnum"}
-            ]
-        },
         "formatEnum": {
             "description": "Enumeration for File Format",
             "type": "array",
@@ -613,6 +604,7 @@
             ]
         },
         "isoCountryCodeEnum": {
+            "$id": "#/definitions/isoCountryCodeEnum",
             "type": "string",
             "enum": [
                 "AD",
@@ -810,8 +802,7 @@
                 "ZM",
                 "ZW"
             ],
-            "$comment": "dataType",
-            "$id": "#/definitions/isoCountryCodeEnum"
+            "$comment": "dataType"
         },
         "jurisdiction": {
             "$id": "#/definitions/jurisdiction",
@@ -1359,6 +1350,7 @@
             "$id": "#/definitions/url"
         },
         "urlList": {
+            "$id": "#/definitions/urlList",
             "description": "List of URLs",
             "type": "array",
             "uniqueItems": true,
@@ -1367,8 +1359,7 @@
                     {"$ref": "#/definitions/url"}
                 ]
             },
-            "$comment": "dataType",
-            "$id": "#/definitions/urlList"
+            "$comment": "dataType"
         },
         "usage": {
             "$id": "#/definitions/usage",
