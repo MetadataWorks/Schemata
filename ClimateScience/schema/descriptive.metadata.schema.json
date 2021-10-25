@@ -1134,15 +1134,6 @@
                 {"$ref": "#/definitions/urlList"}
             ]
         },
-        "resourceCreator": {
-            "$id": "#/definitions/resourceCreator",
-            "title": "Resource Creator",
-            "$comment": "dataElement",
-            "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
-            "allOf": [
-                {"$ref": "#/definitions/characters1000List"}
-            ]
-        },
         "source": {
             "$id": "#/definitions/source",
             "title": "Source",
