@@ -826,15 +826,6 @@
             "$comment": "dataType",
             "$id": "#/definitions/keywordList"
         },
-        "language": {
-            "$id": "#/definitions/language",
-            "title": "Language",
-            "$comment": "dataElement",
-            "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
-            "allOf": [
-                {"$ref": "#/definitions/languageEnum"}
-            ]
-        },
         "languageEnum": {
             "description": "Enumeration for Languages",
             "type": "string",
