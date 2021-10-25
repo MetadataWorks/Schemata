@@ -998,15 +998,6 @@
             "$comment": "dataType",
             "$id": "#/definitions/latitude"
         },
-        "license": {
-            "$id": "#/definitions/license",
-            "title": "License",
-            "$comment": "dataElement",
-            "description": "Legal document under which the distribution of data is made available.",
-            "allOf": [
-                {"$ref": "#/definitions/url"}
-            ]
-        },
         "logo": {
             "$id": "#/definitions/logo",
             "title": "Logo",
