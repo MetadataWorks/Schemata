@@ -281,15 +281,6 @@
                 }
             }
         },
-        "accessURL": {
-            "$id": "#/definitions/accessURL",
-            "title": "Access URL",
-            "$comment": "dataElement",
-            "description": "A URL of the resource that gives access to a distribution of the dataset. E.g. landing page, download link, service desk request.",
-            "allOf": [
-                {"$ref": "#/definitions/urlList"}
-            ]
-        },
         "accessibility": {
             "$id": "#/definitions/accessibility",
             "type": "object",
