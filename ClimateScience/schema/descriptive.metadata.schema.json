@@ -6,8 +6,10 @@
     "description": "IPCC descriptive metadata specification v1.0.0",
     "version": "0.0.1",
     "status": "draft",
-    "required": ["summary"],
-    "additionalProperties": false,
+    "required": [
+        "summary"
+    ],
+  "additionalProperties": false,
     "properties": {
         "identifier": {
             "$id": "#/properties/identifier",
@@ -16,7 +18,7 @@
             "examples": [
                 ["226fb3f1-4471-400a-8c39-2b66d46a39b6"]
             ],
-            "description": "System dataset identifier",
+            "description": "System dataset identifier.  Resolvable, Persistent Dataset Identifier \n\nThis is the persistent identifier that should resolve to the latest metadata revision.\n",
             "anyOf": [
                 {"$ref": "#/definitions/uuidv4"},
                 {
@@ -29,13 +31,15 @@
             "$id": "#/properties/version",
             "title": "Dataset Version",
             "description": "Dataset metadata version",
-            "$ref": "#/definitions/semver",
+            "anyOf": [
+                {"$ref": "#/definitions/semver"}
+            ],
             "examples": ["1.1.0"]
         },
         "revisions": {
             "$id": "#/properties/revisions",
             "title": "Dataset Revisions",
-            "description": "Revisions of Dataset metadata",
+            "description": "Revisions of Dataset metadata.  This is a repeating section where all the revisions (versions) of the metadata can be captured and linked.",
             "type": "array",
             "items": [
                 {"$ref": "#/definitions/revision"}
@@ -61,7 +65,7 @@
             "$id": "#/properties/summary",
             "title": "Summary",
             "description": "Summary metadata must be completed by Data Custodians onboarding metadata.",
-            "$ref": "#/definitions/summary"
+            "andOf" : [{"$ref": "#/definitions/summary"}]
         },
         "documentation": {
             "$id": "#/properties/documentation",
@@ -124,8 +128,8 @@
                     "$id": "#enrichmentAndLinkage/qualifiedRelations",
                     "title": "Qualifiedrelations",
                     "$comment": "dataElement",
-                    "default": [],
-                    "$ref": "#/definitions/urlList"
+                    "description": "If applicable, please provide the DOI of other datasets that have previously been linked to this dataset and their availability.\n\nIf no DOI is available, please provide the title of the datasets that can be linked, where possible using the same title of a dataset previously onboarded.\n\nThe other datasets linked to here might also be referencing or be referenced by the dataset in question in cases where specifying these relations under the respective, separate attributes is not technically possible.",
+                    "$ref" : "#/definitions/urlList"
                 },
                 "tools": {
                     "$id": "#enrichmentAndLinkage/tools",
@@ -265,7 +269,6 @@
             "type": "object",
             "title": "Accessibility",
             "$comment": "dataClass",
-            "description": "Accessibility information allows researchers to understand access, usage, limitations, formats, standards and linkage or interoperability with toolsets. This section includes information about how the data can be used and how it is currently being used.",
             "properties": {
                 "usage": {
                     "$id": "#/accessibility/usage",
@@ -286,7 +289,6 @@
             "type": "object",
             "title": "Coverage",
             "$comment": "dataClass",
-            "description": "This information includes attributes for geographical and temporal coverage, cohort details etc. to enable a deeper understanding of the dataset content so that researchers can make decisions about the relevance of the underlying data.",
             "required": [
                 "startDate"
             ],
@@ -353,7 +355,6 @@
             "type": "object",
             "title": "Documentation",
             "$comment": "dataClass",
-            "description": "Documentation can include a rich text description of the dataset or links to media such as documents, images, presentations, videos or links to data dictionaries, profiles or dashboards.",
             "properties": {
                 "description": {
                     "$id": "#/documentation/description",
@@ -910,7 +911,7 @@
                     "$id": "#/organisation/description",
                     "title": "Description",
                     "$comment": "dataElement",
-                    "description": "An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.\nAdditional information can be recorded and included using media.",
+                    "description": "Please provide a URL that describes the organisation.",
                     "$ref": "#/definitions/url"
                 }
             }
@@ -920,7 +921,6 @@
             "type": "object",
             "title": "Provenance",
             "$comment": "dataClass",
-            "description": "Provenance information allows researchers to understand data within the context of its origins and can be an indicator of quality, authenticity and timeliness.",
             "properties": {
                 "purpose": {
                     "$id": "#/provenance/purpose",
@@ -943,19 +943,18 @@
             "type": "object",
             "title": "Summary",
             "$comment": "dataClass",
-            "description": "Summary metadata must be completed by Data Custodians onboarding metadata.",
             "required": [
                 "title",
                 "publisher",
-                "abstract",
-                "contactPoint"
+                "contactPoint",
+                "abstract"
             ],
             "properties": {
                 "title": {
                     "$id": "#/summary/title",
                     "title": "Title",
                     "$comment": "dataElement",
-                    "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 180 characters or under.",
+                    "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 80 characters or under.",
                     "$ref": "#/definitions/characters180"
                 },
                 "abstract": {
@@ -995,7 +994,7 @@
                     "$ref": "#/definitions/characters180"
                 },
                 "publisher": {
-                    "$id": "#/summary/organisation",
+                    "$id": "#/summary/publisher",
                     "title": "Publisher",
                     "description": "This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.",
                     "$ref": "#/definitions/organisation"
