@@ -380,7 +380,13 @@
                     "title": "Is Part Of",
                     "$comment": "dataElement",
                     "description": "Please complete only if the dataset is part of a group or collection of datasets.",
-                    "$ref": "#/definitions/characters80"
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "allOf": [
+                            {"$ref": "#/definitions/characters80"}
+                        ]
+                    }
                 },
                 "associatedMedia": {
                     "$id": "#/documentation/associatedMedia",
