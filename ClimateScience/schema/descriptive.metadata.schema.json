@@ -51,7 +51,7 @@
             "$comment": "dcat:issued",
             "description": "Dataset Metadata Creation Date",
             "type": "string",
-            "format": "date-time"
+            "format": "date"
         },
         "modified": {
             "$id": "#/properties/modified",
