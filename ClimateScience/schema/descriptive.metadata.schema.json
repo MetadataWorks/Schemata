@@ -15,9 +15,6 @@
             "$id": "#/properties/identifier",
             "title": "Dataset identifier",
             "$comment": "http://purl.org/dc/terms/identifier",
-            "examples": [
-                ["226fb3f1-4471-400a-8c39-2b66d46a39b6"]
-            ],
             "description": "System dataset identifier.  Resolvable, Persistent Dataset Identifier \n\nThis is the persistent identifier that should resolve to the latest metadata revision.\n",
             "anyOf": [
                 {"$ref": "#/definitions/uuidv4"},
@@ -49,7 +46,7 @@
             "$id": "#/properties/issued",
             "title": "Creation Date",
             "$comment": "dcat:issued",
-            "description": "Dataset Metadata Creation Date",
+            "description": "Dataset metadata published date.",
             "type": "string",
             "format": "date"
         },
@@ -57,7 +54,7 @@
             "$id": "#/properties/modified",
             "title": "Modification Date",
             "$comment": "dcat:modified",
-            "description": "Dataset Metadata Creation Date",
+            "description": "Dataset metadata modification date",
             "type": "string",
             "format": "date"
         },
@@ -70,7 +67,7 @@
         "documentation": {
             "$id": "#/properties/documentation",
             "title": "Documentation",
-            "description": "Documentation can include a rich text description of the dataset or links to media such as documents, images, presentations, videos or links to data dictionaries, profiles or dashboards.",
+            "description": "Dataset documentation can include a rich text description of the dataset or links to media such as documents, images, presentations, videos or links to data dictionaries, profiles or dashboards. Organisations are required to confirm that they have permission to distribute any additional media.",
             "$ref": "#/definitions/documentation"
         },
         "coverage": {
@@ -110,7 +107,7 @@
             "properties": {
                 "version": {
                     "$id": "#/definitions/revision/version",
-                    "description": "Semantic Version",
+                    "description": "Dataset Metadata version",
                     "$ref": "#/definitions/semver"
                 },
                 "url": {
@@ -136,6 +133,7 @@
                     "title": "Tools",
                     "$comment": "dataElement",
                     "description": "Please provide the URL of any analysis tools or models that have been created for this dataset and are available for further use. Multiple tools may be provided.",
+                    "examples": ["https://www.esmvaltool.org/"],
                     "$ref": "#/definitions/urlList"
                 }
             }
@@ -253,6 +251,7 @@
                     "title": "Language",
                     "$comment": "dataElement",
                     "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
+                    "examples": ["en", "es", "zh", "ru", "ar", "fr"],
                     "anyOf": [
                         {
                             "type": "array",
@@ -271,7 +270,8 @@
                     "$id": "#/access/format",
                     "title": "Format",
                     "$comment": "dataElement",
-                    "description": "The file format of the distribution.",
+                    "description": "TThe file format of the distribution.  If multiple formats are available, please specify.\n\nSee application, audio, image, message, model, multipart, text, video,  https://www.iana.org/assignments/media-types/media-types.xhtml\n\nNote: If your file format is not included in the current list of formats, you will be directed to a service desk page where you can request your additional format. If not, please go to:\nhttps://metadata.atlassian.net/servicedesk/customer/portal/6 to request your format.\n",
+                    "examples": ["application/x-netcdf"],
                     "$ref": "#/definitions/formatEnum"
                 }
             }
@@ -310,6 +310,7 @@
                     "title": "Spatial Coverage",
                     "$comment": "dataElement",
                     "description": "A spatial region, area or named place covered by the dataset.",
+                    "examples": ["Europe"],
                     "$ref": "#/definitions/characters80"
                 },
                 "spatialAggregation": {
@@ -317,6 +318,7 @@
                     "title": "Spatial Aggregation",
                     "$comment": "dataElement",
                     "description": "A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).",
+                    "examples": ["Global", "Continent", "Country", "Other", "Gridded"],
                     "$ref": "#/definitions/characters80"
                 },
                 "spatialResolution": {
@@ -324,6 +326,7 @@
                     "title": "Spatial Resolution",
                     "$comment": "dataElement",
                     "description": "A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an \"equivalent scale\" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.\nWhere the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.",
+                    "examples": ["Reanalysis: 0.25° x 0.25°.  Mean, spread and members: 0.5° x 0.5°"],
                     "$ref": "#/definitions/characters80"
                 },
                 "startDate": {
@@ -345,6 +348,7 @@
                     "title": "Temporal Resolution",
                     "$comment": "dataElement",
                     "description": "Minimum time period resolvable in the dataset distribution.",
+                    "examples": ["Daily", "Monthly", "Annually"],
                     "$ref": "#/definitions/temporalResolutionEnum"
                 },
                 "geographicBoundingBox": {
@@ -380,6 +384,7 @@
                     "title": "Is Part Of",
                     "$comment": "dataElement",
                     "description": "Please complete only if the dataset is part of a group or collection of datasets.",
+                    "examples": ["AR6"],
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
@@ -442,6 +447,7 @@
                     "title": "Lower Left Latitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. The lower left latitude will be smaller than the upper right latitude.",
+                    "examples": [-90.0000],
                     "$ref": "#/definitions/latitude"
                 },
                 "lowerLeftLongitude": {
@@ -449,6 +455,7 @@
                     "title": "Lower Left Longitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. Generally the lower left longitude will be smaller than the upper right longitude. However when the area crosses the 180° meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.",
+                    "examples": [-180.0000],
                     "$ref": "#/definitions/longitude"
                 },
                 "upperRightLatitude": {
@@ -456,6 +463,7 @@
                     "title": "Upper Right Latitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. Upper right latitude will be greater than the lower left latitude.",
+                    "examples": [90.0000],
                     "$ref": "#/definitions/latitude"
                 },
                 "upperRightLongitude": {
@@ -463,6 +471,7 @@
                     "title": "Upper Right Longitude",
                     "$comment": "dataElement",
                     "description": "The geographic bounding box describes a \"north up\" area. Generally the upper right longitude will be greater than the lower left longitude. However when the area crosses the 180° meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.",
+                    "examples": [180.0000],
                     "$ref": "#/definitions/longitude"
                 }
             }
@@ -901,7 +910,7 @@
                     "$id": "#/organisation/identifier",
                     "title": "Identifier",
                     "$comment": "dataElement",
-                    "description": "Please provide an identifier for your organisation.",
+                    "description": "Please provide an identifier for your organisation\n\nNote: common institutions/affiliations can use a ROR (https://ror.org/) identifier  and\nor re3data PIDs (https://www.re3data.org/). ROR replaces the older GRID (https://www.grid.ac).",
                     "$ref": "#/definitions/url"
                 },
                 "name": {
@@ -916,13 +925,15 @@
                     "title": "Logo",
                     "$comment": "dataElement",
                     "description": "Please provide a logo associated with the Organisation using a valid URL. The following formats will be accepted .jpg, .png or .svg.",
+                    "examples": ["https://www.ipcc-data.org/img/DKRZ_Logo_281x127_2014.png"],
                     "$ref": "#/definitions/url"
                 },
                 "contactPointOrg": {
                     "$id": "#/organisation/contactPointOrg",
                     "title": "Contact Point",
                     "$comment": "dataElement",
-                    "description": "Please provide a valid email address that can be used to coordinate data enquiries with the publisher.\nOrganisations are expected to provide a dedicated email address associated with the data access request process for their organisation.\nThis will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.",
+                    "description": "Please provide a valid email address that can be used to coordinate data enquiries with the publisher.\n\nOrganisations are expected to provide a dedicated email address associated with the data access request process for their organisation.\n\nThis will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.",
+                    "examples": ["ciesin.info@ciesin.columbia.edu"],
                     "$ref": "#/definitions/emailAddress"
                 },
                 "description": {
@@ -930,6 +941,7 @@
                     "title": "Description",
                     "$comment": "dataElement",
                     "description": "Please provide a URL that describes the organisation.",
+                    "examples": ["http://www.ciesin.columbia.edu/aboutus.html"],
                     "$ref": "#/definitions/url"
                 }
             }
@@ -945,6 +957,7 @@
                     "title": "Purpose",
                     "$comment": "dataElement",
                     "description": "Please indicate the purpose(s) that the dataset was collected.",
+                    "examples": ["Project Description, Long Term Observations X, Study Y"],
                     "$ref": "#/definitions/characters3000"
                 },
                 "source": {
@@ -952,6 +965,7 @@
                     "title": "Source",
                     "$comment": "dataElement",
                     "description": "Please indicate the source of the data extraction.",
+                    "examples": ["Raw data", "Secondary data"],
                     "$ref": "#/definitions/characters3000"
                 }
             }
@@ -972,35 +986,39 @@
                     "$id": "#/summary/title",
                     "title": "Title",
                     "$comment": "dataElement",
-                    "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 80 characters or under.",
+                    "description": "Title of the dataset limited to 180 characters. \n\nIt should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \n\nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 80 characters or under.",
+                    "examples": ["Biogeochemical Ocean Flux Study (BOFS) North Atlantic Data Set (1989-1991)"],
                     "$ref": "#/definitions/characters180"
                 },
                 "abstract": {
                     "$id": "#/summary/abstract",
                     "title": "Abstract",
                     "$comment": "dataElement",
-                    "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.",
+                    "description": "Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. \nThe optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.\n\nNote: Researchers will view Titles and Abstracts when searching for datasets in the Catalogue before choosing whether to explore their content further. Abstracts should be shorter (255 characters) and different from the full description for a dataset (see next section).",
+                    "examples": ["This data set, produced by the Copernicus Emergency Management Service for the European Forest Fire Information System, provides complete historical reconstruction of meteorological conditions favourable to the start, spread and sustainability of fires."],
                     "$ref": "#/definitions/characters255"
                 },
                 "contactPoint": {
                     "$id": "#/summary/contactPoint",
                     "title": "Contact Point",
                     "$comment": "dataElement",
-                    "description": "Please provide a valid email address that can be used to coordinate data access requests with the publisher. If an employee/author email address is provided an explicit consent must be obtained for this purpose.",
+                    "description": "Please provide a valid email address that can be used for questions about the data, further information, and enquiries.\n\nNotes: This could be either the author of a figure/dataset or a generic email address for the data providers institution (IEA, EDGAR etc.). If an employee/author email address is provided an explicit consent must be obtained for this purpose.",
+                    "examples": ["ipcc.ddc.datasupport@metadata.atlassian.net"],
                     "$ref": "#/definitions/emailAddress"
                 },
                 "keywords": {
                     "$id": "#/summary/keywords",
                     "title": "Keywords",
                     "$comment": "dataElement",
-                    "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset. \nIPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
+                    "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset as a comma separated list.\n\nNotes: IPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
+                    "examples": ["Land", "Precipitation", "Extremes", "Europe", "Flood", "Impacts", "AR5"],
                     "$ref": "#/definitions/keywordList"
                 },
                 "doi": {
                     "$id": "#/summary/doi",
                     "title": "DOI name",
                     "$comment": "dataElement",
-                    "description": "All IPCC DDC registered datasets should either have a Digital Object Identifier (DOI) or be working towards obtaining one. If a DOI is available and has been minted through another system/organisation, please provide the DOI. If there is not a DOI the IPCC DDC can mint a DOI for your dataset.",
+                    "description": "All IPCC DDC registered datasets should either have a Digital Object Identifier (DOI) or be working towards obtaining one. If a DOI is available and has been minted through another system/organisation, please provide the DOI. If there is not a DOI the IPCC DDC can mint a DOI for your dataset\n\nNote: This is not the DOI of the publication(s) associated with the dataset.",
                     "$ref": "#/definitions/doi",
                     "examples": ["10.3399/bjgp17X692645"]
                 },
@@ -1008,20 +1026,19 @@
                     "$id": "#/summary/alternateIdentifier",
                     "title": "Alternate Identifier",
                     "$comment": "dataElement",
-                    "description": "An identifier or identifiers other than the primary Identifier applied to the resource being registered.\nThis may be any alphanumeric string which is unique within its domain of issue.",
+                    "description": "An identifier or identifiers other\nthan the primary Identifier applied\nto the resource being registered.\nThis may be any alphanumeric\nstring which is unique within its\ndomain of issue.",
                     "$ref": "#/definitions/characters180"
                 },
                 "publisher": {
                     "$id": "#/summary/publisher",
                     "title": "Publisher",
-                    "description": "This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.",
                     "$ref": "#/definitions/organisation"
                 },
                 "publicationDate": {
                     "$id": "#/definitions/publicationDate",
                     "title": "Publication Date",
                     "$comment": "dataElement",
-                    "description": "Date the data-model is published.",
+                    "description": "The date this version of the dataset was published.",
                     "$ref": "#/definitions/date"
                 }
             }
@@ -1072,21 +1089,28 @@
             "type": "object",
             "title": "Usage",
             "$comment": "dataClass",
-            "description": "This section includes information about how the data can be used and how it is currently being used.",
             "properties": {
                 "license": {
                     "$id": "#/usage/license",
                     "title": "License",
                     "$comment": "dataElement",
-                    "description": "Legal document under which the distribution of data is made available.",
+                    "description": "Legal document under which the distribution of data is made available. \n\nUsage note: Information about licenses and rights SHOULD be provided on the level of Distribution. Information about licenses and rights MAY be provided for a Dataset in addition to but not instead of the information provided for the Distributions of that Dataset. Providing license or rights information for a Dataset that is different from information provided for a Distribution of that Dataset SHOULD be avoided as this can create legal conflicts.",
+                    "examples": ["https://creativecommons.org/licenses/by/3.0/legalcode"],
                     "$ref": "#/definitions/url"
                 },
                 "resourceCreator": {
                     "$id": "#/usage/resourceCreator",
                     "title": "Resource Creator",
                     "$comment": "dataElement",
-                    "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.",
-                    "$ref": "#/definitions/characters1000List"
+                    "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property. \n\nNote:  May be a corporate/institutional or personal name and more than one author be provided.\n",
+                    "examples": ["van Donkelaar, A."],
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "allOf": [
+                            {"$ref": "#/definitions/characters80"}
+                        ]
+                    }
                 },
                 "investigations": {
                     "$id": "#/usage/investigations",
@@ -1100,6 +1124,7 @@
                     "title": "Is Referenced By",
                     "$comment": "dataElement",
                     "description": "Please provide the keystone paper associated with the dataset. Also include a list of known citations, if available, and should be links to existing resources where the dataset has been used or referenced.",
+                    "examples": ["https://www.ipcc.ch/report/ar6/wg1/"],
                     "$ref": "#/definitions/urlList"
                 },
                 "references": {
@@ -1107,6 +1132,7 @@
                     "title": "References",
                     "$comment": "dataElement",
                     "description": "A related resource that is referenced, cited, or otherwise pointed to by the described resource.",
+                    "examples": ["https://doi.org/10.1016/j.gloenvcha.2016.05.009"],
                     "$ref": "#/definitions/urlList"
                 }
             }
