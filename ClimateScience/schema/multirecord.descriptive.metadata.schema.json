@@ -71,7 +71,9 @@
                     "$comment": "dcat:issued",
                     "description": "Dataset Metadata Creation Date",
                     "type": "string",
-                    "format": "date-time"
+                    "allOf": [
+                        {"$ref": "#/definitions/date"}
+                    ]
                 },
                 "modified": {
                     "$id": "#/properties/modified",
@@ -79,7 +81,9 @@
                     "$comment": "dcat:modified",
                     "description": "Dataset Metadata Creation Date",
                     "type": "string",
-                    "format": "date-time"
+                    "allOf": [
+                        {"$ref": "#/definitions/date"}
+                    ]
                 },
                 "summary": {
                     "$id": "#/properties/summary",
@@ -292,9 +296,12 @@
                     "title": "Language",
                     "$comment": "dataElement",
                     "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
-                    "allOf": [
-                        {"$ref": "#/definitions/languageEnum"}
-                    ]
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {"$ref": "#/definitions/languageEnum"}
+                        ]
+                    }            
                 },
                 "format": {
                     "$id": "#/access/format",
@@ -454,9 +461,13 @@
         "date": {
             "description": "Date",
             "type": "string",
-            "format": "date",
             "$comment": "dataType",
-            "$id": "#/definitions/date"
+            "$id": "#/definitions/date",
+            "anyOf":[
+                {"format": "date"},
+                {"format": "date-time"}
+            ]
+            
         },
         "description": {
             "$id": "#/definitions/description",
@@ -488,9 +499,12 @@
                     "title": "Is Part Of",
                     "$comment": "dataElement",
                     "description": "Please complete only if the dataset is part of a group or collection of datasets.",
-                    "allOf": [
-                        {"$ref": "#/definitions/characters80"}
-                    ]
+                    "type": "array",
+                    "items": {
+                        "allOf": [
+                            {"$ref": "#/definitions/characters80"}
+                        ]
+                    }
                 },
                 "associatedMedia": {
                     "$id": "#/documentation/associatedMedia",
@@ -865,15 +879,6 @@
             "description": "Please provide relevant and specific keywords that can improve the SEO of your dataset. \nIPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.",
             "allOf": [
                 {"$ref": "#/definitions/keywordList"}
-            ]
-        },
-        "language": {
-            "$id": "#/definitions/language",
-            "title": "Language",
-            "$comment": "dataElement",
-            "description": "A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.",
-            "allOf": [
-                {"$ref": "#/definitions/languageEnum"}
             ]
         },
         "languageEnum": {
@@ -1294,7 +1299,7 @@
                     "$comment": "dataElement",
                     "description": "The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. \nGood titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 180 characters or under.",
                     "allOf": [
-                        {"$ref": "#/definitions/characters80"}
+                        {"$ref": "#/definitions/characters180"}
                     ]
                 },
                 "abstract": {
