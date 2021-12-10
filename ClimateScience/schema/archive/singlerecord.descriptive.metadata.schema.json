@@ -4,8 +4,8 @@
     "type": "object",
     "title": "IPCC Dataset",
     "description": "IPCC descriptive metadata specification v1.0.0",
-    "version": "0.0.1",
-    "status": "draft",
+    "version": "1.0.0",
+    "status": "approved",
     "required": [
         "summary"
     ],
@@ -31,7 +31,7 @@
             "anyOf": [
                 {"$ref": "#/definitions/semver"}
             ],
-            "examples": ["1.1.0"]
+            "examples": ["1.0.0"]
         },
         "revisions": {
             "$id": "#/properties/revisions",
@@ -228,7 +228,7 @@
                     "title": "Access URL",
                     "$comment": "dataElement",
                     "description": "A URL of the resource that gives access to a distribution of the dataset. E.g. landing page, download link, service desk request.",
-                    "$ref": "#/definitions/urlList"
+                    "$ref": "#/definitions/url"
                 },
                 "accessService": {
                     "$id": "#/access/accessService",
@@ -272,7 +272,7 @@
                     "$comment": "dataElement",
                     "description": "TThe file format of the distribution.  If multiple formats are available, please specify.\n\nSee application, audio, image, message, model, multipart, text, video,  https://www.iana.org/assignments/media-types/media-types.xhtml\n\nNote: If your file format is not included in the current list of formats, you will be directed to a service desk page where you can request your additional format. If not, please go to:\nhttps://metadata.atlassian.net/servicedesk/customer/portal/6 to request your format.\n",
                     "examples": ["application/x-netcdf"],
-                    "$ref": "#/definitions/formatEnum"
+                    "$ref": "#/definitions/characters80"
                 }
             }
         },

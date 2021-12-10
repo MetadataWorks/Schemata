@@ -1,0 +1,882 @@
+{
+  "count": 9,
+  "dataModels": [
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=156",
+      "version": "0.0.2",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=156"
+        },
+        {
+          "version": "0.0.2",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=342"
+        }
+      ],
+      "issued": "2021-09-10",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.5 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.5 shows changes in annual mean surface temperatures, precipitation, and total column soil moisture.  Data for Figure SPM.5 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the IPCC AR6.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          " IPCC-DDC",
+          "AR6",
+          "CMIP6",
+          "Figure SPM.5",
+          "IPCC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "global warming level",
+          "precipitation",
+          "projection",
+          "soil moisture",
+          "temperature"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/2787230b963942009e452255a3880609",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.5 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.5 shows changes in annual mean surface temperatures, precipitation, and total column soil moisture.  \r\n\r\n---------------------------------------------------\r\nFigure caption\r\n---------------------------------------------------\r\nPanel a) Comparison of observed and simulated annual mean surface temperature change. The left map shows the observed changes in annual mean surface temperature in the period of 1850\u20132020 per \u00b0C of global warming (\u00b0C). The local (i.e., grid point) observed annual mean surface temperature changes are linearly regressed against the global surface temperature in the period 1850\u20132020. Observed temperature data are from Berkeley Earth, the dataset with the largest coverage and highest horizontal resolution. Linear regression is applied to all years for which data at the corresponding grid point is available. The regression method was used to take into account the complete observational time series and thereby reduce the role of internal variability at the grid point level. White indicates areas where time coverage was 100 years or less and thereby too short to calculate a reliable linear regression. The right map is based on model simulations and shows change in annual multi-model mean simulated temperatures at a global warming level of 1\u00b0C (20-year mean global surface temperature change relative to 1850\u20131900). The triangles at each end of the color bar indicate out-of-bound values, that is, values above or below the given limits. Panel b) Simulated annual mean temperature change (\u00b0C), panel c) precipitation change (%), and panel d) total column soil moisture change (standard deviation of interannual variability) at global warming levels of 1.5\u00b0C, 2\u00b0C and 4\u00b0C (20-yr mean global surface temperature change relative to 1850\u20131900). Simulated changes correspond to CMIP6 multi-model mean change (median change for soil moisture) at the corresponding global warming level, i.e. the same method as for the right map in panel a). In panel c), high positive percentage changes in dry regions may correspond to small absolute changes. In panel d), the unit is the standard deviation of interannual variability in soil moisture during 1850\u20131900. Standard deviation is a widely used metric in characterizing drought severity. A projected reduction in mean soil moisture by one standard deviation corresponds to soil moisture conditions typical of droughts that occurred about once every six years during 1850\u20131900. In panel d), large changes in dry regions with little interannual variability in the baseline conditions can correspond to small absolute change. The triangles at each end of the color bars indicate out-of-bound values, that is, values above or below the given limits. Results from all models reaching the corresponding warming level in any of the five illustrative scenarios (SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5) are averaged. Maps of annual mean temperature and precipitation changes at a global warming level of 3\u00b0C are available in Figure 4.31 and Figure 4.32 in Section 4.6. Corresponding maps of panels b), c) and d) including hatching to indicate the level of model agreement at grid-cell level are found in Figures 4.31, 4.32 and 11.19, respectively; as highlighted in CC-box Atlas.1, grid-cell level hatching is not informative for larger spatial scales (e.g., over AR6 reference regions) where the aggregated signals are less affected by small-scale variability leading to an increase in robustness. {TS.1.3.2, Figure TS.3, Figure TS.5, Figure 1.14, 4.6.1, Cross-Chapter Box 11.1, Cross-Chapter Box Atlas.1}\r\n\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has four panels with 11 maps. All data is provided, except for panel a1.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains:\r\n\r\n- Annual mean temperature change (\u00b0C) (relative to 1850-1900)\r\n- Annual mean precipitation change (%) (relative to 1850-1900)\r\n- Annual mean soil moisture change (standard deviation of interannual variability) (relative to 1850-1900)\r\n \r\nThe data is given for global warming levels (GWLs), namely +1.0\u00b0C (temperature only), +1.5\u00b0C, 2.0\u00b0C, and +4.0\u00b0C.",
+        "associatedMedia": [
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Grid-box",
+        "spatialResolution": "Grid-box",
+        "startDate": "1850-01-01",
+        "temporalResolution": "OTHER",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/.",
+          "resourceCreator": [
+            "Fischer, E.",
+            "Hauser, M."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Fischer, E.; Hauser, M. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.5 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/2787230b963942009e452255a3880609. http://dx.doi.org/10.5285/2787230b963942009e452255a3880609 ",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "NetCDF"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=157",
+      "version": "0.0.1",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=157"
+        }
+      ],
+      "issued": "2021-09-10",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.6 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.6 shows projected changes in the intensity and frequency of extreme temperature, extreme precipitation and droughts.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "CMIP6",
+          "Figure SPM.6",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "drought",
+          "extreme precipitation",
+          "frequency",
+          "global warming level",
+          "hot temperature extremes",
+          "intensity",
+          "projection"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/93d1b84fbb144901809eaf67b35eb5c4",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.6 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.6 shows projected changes in the intensity and frequency of extreme temperature, extreme precipitation and droughts.\r\n\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nProjected changes in the intensity and frequency of hot temperature extremes over land, extreme precipitation over land, and agricultural and ecological droughts in drying regions. Projected changes are shown at global warming levels of 1\u00b0C, 1.5\u00b0C, 2\u00b0C, and 4\u00b0C and are relative to 1850-1900 {Footnote } representing a climate without human influence. The figure depicts frequencies and increases in intensity of 10- or 50-year extreme events from the base period (1850-1900) under different global warming levels. Hot temperature extremes are defined as the daily maximum temperatures over land that were exceeded on average once in a decade (10-year event) or once in 50 years (50-year event) during the 1850\u20131900 reference period. Extreme precipitation events are defined as the daily precipitation amount over land that was exceeded on average once in a decade during the 1850\u20131900 reference period. Agricultural and ecological drought events are defined as the annual average of total column soil moisture below the 10th percentile of the 1850\u20131900 base period. These extremes are defined on model grid box scale. For hot temperature extremes and extreme precipitation, results are shown for the global land. For agricultural and ecological drought, results are shown for drying regions only, which correspond to the AR6 regions in which there is at least medium confidence in a projected increase in agricultural/ecological drought at the 2\u00b0C warming level compared to the 1850\u20131900 base period in CMIP6. These regions include W. North-America, C. North-America, N. Central-America, S. Central-America, Caribbean, N. South-America, N.E. South-America, South-American-Monsoon, S.W. South-America, S. South-America, West & Central-Europe, Mediterranean, W. Southern-Africa, E. Southern-Africa, Madagascar, E. Australia, S. Australia (Caribbean is not included in the calculation of the figure because of the too small number of full land grid cells). The non-drying regions do not show an overall increase or decrease in drought severity. Projections of changes in agricultural and ecological droughts in the CMIP5 multi-model ensemble differ from those in CMIP6 in some regions, including in part of Africa and Asia. Assessments on projected changes in meteorological and hydrological droughts are provided in Chapter 11. {11.6, 11.9} In the \u2018frequency\u2019 section, each year is represented by a dot. The dark dots indicate years in which the extreme threshold is exceeded, while light dots are years when the threshold is not exceeded. Values correspond to the medians (in bold) and their respective 5%-95% range based on the multi-model ensemble from simulations of CMIP6 under different SSP scenarios. For consistency, the number of dark dots is based on the rounded-up median. In the \u2018intensity\u2019 section, medians and their 5%-95% range, also based on the multi-model ensemble from simulations of CMIP6, are displayed as dark and light bars, respectively. Changes in the intensity of hot temperature extremes and extreme precipitations are expressed as degree celsius and percentage. As for agricultural and ecological drought, intensity changes are expressed as fractions of standard deviation of annual soil moisture. {11.1, 11.3, 11.4, 11.6, Figure 11.12, Figure 11.15, Figure 11.6, Figure 11.7, Figure 11.18} Footnote: The period 1850\u20131900 represents the earliest period of sufficiently globally complete observations to estimate global surface temperature and, consistent with AR5 and SR1.5, is used as an approximation for pre-industrial conditions.\r\n\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has four panels, with data provided for all panels in subdirectories named panel_a, panel_b, panel_c and panel_d.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains:\r\n- Changes in annual maximum temperature (TXx) extremes for intensity (\u00b0C) and frequency (-) for 1 in 10 year and 1 in 50 year events (relative to 1850-1900)\r\n- Changes in annual maximum 1-day precipitation (Rx1day) extremes for intensity (%) and frequency (-) for 1 in 10 year events (relative to 1850-1900)\r\n- Changes in soil moisture-based drought events for intensity (standard deviation) and frequency (-) for 1 in 10 year events (relative to 1850-1900)",
+        "associatedMedia": [
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Region",
+        "spatialResolution": "Grid-box",
+        "startDate": "1850-01-01",
+        "temporalResolution": "OTHER",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Hauser, M.",
+            "Li, C."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Li, C.; Hauser, M. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.6 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/93d1b84fbb144901809eaf67b35eb5c4. http://dx.doi.org/10.5285/93d1b84fbb144901809eaf67b35eb5c4",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=158",
+      "version": "0.0.1",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=158"
+        }
+      ],
+      "issued": "2021-09-10",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.7 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.7 shows the cumulative anthropogenic CO2 emissions taken up by land and ocean sinks by 2100 under the five core scenarios.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "CO2 emissions",
+          "Figure SPM.7",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "airborne fraction",
+          "carbon sinks",
+          "cumulative CO2 emissions"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/b1ad4c02319b438884a72fea34cb5a18",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.7 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.7 shows the cumulative anthropogenic CO2 emissions taken up by land and ocean sinks by 2100 under the five core scenarios.\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nCumulative anthropogenic CO2 emissions taken up by land and ocean sinks by 2100 under the five illustrative scenarios. The cumulative anthropogenic (human-caused) carbon dioxide (CO2) emissions taken up by the land and ocean sinks under the five illustrative scenarios (SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5) are simulated from 1850 to 2100 by CMIP6 climate models in the concentration-driven simulations. Land and ocean carbon sinks respond to past, current and future emissions, therefore cumulative sinks from 1850 to 2100 are presented here. During the historical period (1850-2019) the observed land and ocean sink took up 1430 GtCO2 (59% of the emissions). The bar chart illustrates the projected amount of cumulative anthropogenic CO2 emissions (GtCO2) between 1850 and 2100 remaining in the atmosphere (grey part) and taken up by the land and ocean (coloured part) in the year 2100. The doughnut chart illustrates the proportion of the cumulative anthropogenic CO2 emissions taken up by the land and ocean sinks and remaining in the atmosphere in the year 2100. Values in % indicate the proportion of the cumulative anthropogenic CO2 emissions taken up by the combined land and ocean sinks in the year 2100. The overall anthropogenic carbon emissions are calculated by adding the net global land use emissions from CMIP6 scenario database to the other sectoral emissions calculated from climate model runs with prescribed CO2 concentrations*FOOTNOTE. Land and ocean CO2 uptake since 1850 is calculated from the net biome productivity on land, corrected for CO2 losses due to land-use change by adding the land-use change emissions, and net ocean CO2 flux. {Box TS.5, Box TS.5, Figure 1, 5.2.1, Table 5.1, 5.4.5, Figure 5.25}*Footnote: The other sectoral emissions are calculated as the residual of the net land and ocean CO2 uptake and the prescribed atmospheric CO2 concentration changes in the CMIP6 simulations. These calculated emissions are net emissions and do not separate gross anthropogenic emissions from removals, which are included implicitly.\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains cumulative anthropogenic (human-caused) carbon dioxide (CO2) emissions taken up by the land and ocean sinks under the five core scenarios (SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5), simulated from 1850 to 2100 by Earth System Models that contributed to the sixth phase of the Coupled Model Intercomparison Project (CMIP6).\r\n\r\nThe five illustrative SSP (Shared Socio-economic Pathway) scenarios are described in Box SPM.1 of the Summary for Policymakers and Section 1.6.1.1 of Chapter 1.\r\n\r\n---------------------------------------------------\r\nData provided in relation to figure\r\n---------------------------------------------------\r\nData file: SPM7_data.csv: each column corresponds to a single scenario, in which rows 2-7 are the bar values, rows 8-10 are the pie chart values and row 11 is the central value in the pie chart.",
+        "associatedMedia": [
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Global",
+        "spatialResolution": "n/a",
+        "startDate": "1850-01-01",
+        "endDate": "2100-12-31",
+        "temporalResolution": "STATIC",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Canadell, J.",
+            "Cox, P.",
+            "Jones, C.",
+            "Koven, C.",
+            "Monteiro, P.",
+            "Rogelj, J.",
+            "Zaehle, S.",
+            "Zickfeld, K."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Canadell, J.; Cox, P.; Jones, C.; Koven, C.; Monteiro, P.; Rogelj, J.; Zaehle, S.; Zickfeld, K. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.7 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/b1ad4c02319b438884a72fea34cb5a18. http://dx.doi.org/10.5285/b1ad4c02319b438884a72fea34cb5a1",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=159",
+      "version": "0.0.1",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=159"
+        }
+      ],
+      "issued": "2021-09-10",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.8 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.8 shows selected indicators of global climate change under the five core scenarios used in this report.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "Arctic sea ice",
+          "Figure SPM.8",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "global temperature",
+          "ocean acidification",
+          "sea level rise"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/98af2184e13e4b91893ab72f301790db",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.8 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.8 shows selected indicators of global climate change under the five core scenarios used in this report.\r\n\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nSelected indicators of global climate change under the five illustrative scenarios used in this report. The projections for each of the five scenarios are shown in colour. Shades represent uncertainty ranges \u2013 more detail is provided for each panel below. The black curves represent the historical simulations (panels a, b, c) or the observations (panel d). Historical values are included in all graphs to provide context for the projected future changes. Panel a) Global surface temperature changes in \u00b0C relative to 1850\u20131900. These changes were obtained by combining CMIP6 model simulations with observational constraints based on past simulated warming, as well as an updated assessment of equilibrium climate sensitivity (see Box SPM.1). Changes relative to 1850\u20131900 based on 20-year averaging periods are calculated by adding 0.85\u00b0C (the observed global surface temperature increase from 1850\u20131900 to 1995\u20132014) to simulated changes relative to 1995\u20132014. Very likely ranges are shown for SSP1-2.6 and SSP3-7.0. Panel b) September Arctic sea ice area in 10^6 km^2 based on CMIP6 model simulations. Very likely ranges are shown for SSP1-2.6 and SSP3-7.0. The Arctic is projected to be practically ice-free near mid-century under mid- and high GHG emissions scenarios. Panel c) Global ocean surface pH (a measure of acidity) based on CMIP6 model simulations. Very likely ranges are shown for SSP1-2.6 and SSP3-7.0. Panel d) Global mean sea level change in meters relative to 1900. The historical changes are observed (from tide gauges before 1992 and altimeters afterwards), and the future changes are assessed consistently with observational constraints based on emulation of CMIP, ice sheet, and glacier models. Likely ranges are shown for SSP1-2.6 and SSP3-7.0. Only likely ranges are assessed for sea level changes due to difficulties in estimating the distribution of deeply uncertain processes. The dashed curve indicates the potential impact of these deeply uncertain processes. It shows the 83rd percentile of SSP5-8.5 projections that include low-likelihood, high-impact ice sheet processes that cannot be ruled out; because of low confidence in projections of these processes, this curve does not constitute part of a likely range. Changes relative to 1900 are calculated by adding 0.158 m (observed global mean sea level rise from 1900 to 1995\u20132014) to simulated and observed changes relative to 1995\u20132014. Panel e): Global mean sea level change at 2300 in meters relative to 1900. Only SSP1-2.6 and SSP5-8.5 are projected at 2300, as simulations that extend beyond 2100 for the other scenarios are too few for robust results. The 17th\u201383rd percentile ranges are shaded. The dashed arrow illustrates the 83rd percentile of SSP5-8.5 projections that include low-likelihood, high-impact ice sheet processes that cannot be ruled out. Panels b) and c) are based on single simulations from each model, and so include a component of internal variability. Panels a), d) and e) are based on long-term averages, and hence the contributions from internal variability are small. {Figure TS.8, Figure TS.11, Box TS.4 Figure 1, Box TS.4 Figure 1, 4.3, 9.6, Figure 4.2, Figure 4.8, Figure 4.11, Figure 9.27}\r\n\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has five panels, with data provided for all panels in subdirectories named panel_a, panel_b, panel_c, panel_d and panel_e.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains:\r\n\r\n- Historical, SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5 Global Surface Air Temperature (GSAT) anomalies relative to 1850-1900 (20 year means)\r\n- Historical, SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5 September sea-ice area\r\n- Historical, SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5 Global ocean surface pH\r\n- Historical sea level relative to 1900 from gauges (to 1992) and altimeters (1993 on) (offset 0.158 m vs. 1995-2014)\r\n- AR6 sea level projections relative to 1900 (offset 0.158 m vs. 1995-2014)\r\n- AR6 assessed global mean sea level at 2300 relative to 1900 (offset 0.158 m vs. 1995-2014)\r\n\r\nThe five illustrative SSP (Shared Socio-economic Pathway) scenarios are described in Box SPM.1 of the Summary for Policymakers and Section 1.6.1.1 of Chapter 1.",
+        "associatedMedia": [
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Global",
+        "spatialResolution": "n/a",
+        "startDate": "1850-01-01",
+        "endDate": "2300-12-31",
+        "temporalResolution": "ANNUAL",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\n\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Fox-Kemper, B.",
+            "Fyfe, J.",
+            "Garner, G. ",
+            "Kopp, R."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Fyfe, J.; Fox-Kemper, B.; Kopp, R.; Garner, G. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.8 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/98af2184e13e4b91893ab72f301790db. http://dx.doi.org/10.5285/98af2184e13e4b91893ab72f301790db",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=160",
+      "version": "0.0.1",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=160"
+        }
+      ],
+      "issued": "2021-09-10",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.9 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.9 provides a synthesis of the number of AR6 WGI reference regions where climatic impact-drivers are projected to change.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "AR6 regions",
+          "Figure SPM.9",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "climatic impact-drivers",
+          "projection"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/35a7ee81a50c4b95ab59f9bd128f9b63",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.9 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.9 provides a synthesis of the number of AR6 WGI reference regions where climatic impact-drivers are projected to change.\r\n\r\n---------------------------------------------------\r\nData Caption\r\n---------------------------------------------------\r\n\r\nSynthesis of the number of AR6 WGI reference regions where climatic impact-drivers are projected to change A total of 35 climatic impact-drivers (CIDs) grouped into seven types are shown: heat and cold, wet and dry, wind, snow and ice, coastal, open ocean and other. For each CID, the bar in the graph below displays the number of AR6 WGI reference regions where it is projected to change. The colours represent the direction of change and the level of confidence in the change: purple indicates an increase while brown indicates a decrease; darker and lighter shades refer to high and medium confidence, respectively. Lighter background colours represent the maximum number of regions for which each CID is broadly relevant. Panel a) shows the 30 CIDs relevant to the land and coastal regions while panel b) shows the 5 CIDs relevant to the open ocean regions. Marine heatwaves and ocean acidity are assessed for coastal ocean regions in panel a) and for open ocean regions in panel b). Changes refer to a 20\u201330 year period centred around 2050 and/or consistent with 2\u00b0C global warming compared to a similar period within 1960-2014, except for hydrological drought and agricultural and ecological drought which is compared to 1850-1900. Definitions of the regions are provided in Atlas.1 and the Interactive Atlas (see interactive-atlas.ipcc.ch). {Table TS.5, Figure TS.22, Figure TS.25, 11.9, 12.2, 12.4, Atlas.1} (Table SPM.1). \r\n\r\n---------------------------------------------------\r\nTemporal range\r\n---------------------------------------------------\r\nChanges refer to a 20\u201330 year period centred around 2050 and/or consistent with 2\u00b0C global warming compared to a similar period within 1960-2014 or 1850-1900.\r\n\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has two panels, with data provided for all panels in a single file named consolidated_data_figure_SPM9.csv\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains the number of AR6 WGI regions where climatic impact-drivers are projected to change if a global warming level of 2\u00b0C is reached compared to a climatological reference period included within 1960-2014.\r\n\r\n---------------------------------------------------\r\nData provided in relation to figure\r\n---------------------------------------------------\r\nData file: consolidated_data_figure_SPM.9.csv (count of regions with increasing or decreasing changes in climatic impact-drivers); relates to panel (a) and panel (b) and it's shown by the bars in the figure. The first row of data relates to the darker purple bars, the second row to the lighter purple bars, the third row to the lighter brown bars and the fourth row to the darker brown bars. Row 5 represents the maximum number of regions for which each climatic impact-driver is relevant. It is shown on the figure as the lighter-shaded \u2018envelope\u2019",
+        "associatedMedia": [
+          "https://interactive-atlas.ipcc.ch/",
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Region/Global",
+        "spatialResolution": "Grid-box/Region",
+        "startDate": "1850-01-01",
+        "temporalResolution": "OTHER",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Coppola, E.",
+            "Jones, R.",
+            "Pinto, I.",
+            "S\u00f6rensson, A.A."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ],
+          "references": [
+            "https://interactive-atlas.ipcc.ch/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Coppola, E.; Jones, R.; S\u00f6rensson, A.A.; Pinto, I. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.9 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/35a7ee81a50c4b95ab59f9bd128f9b63. http://dx.doi.org/10.5285/35a7ee81a50c4b95ab59f9bd128f9b63",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=161",
+      "version": "0.0.1",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=161"
+        }
+      ],
+      "issued": "2021-09-10",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.10 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.10 shows global warming as a function of cumulative",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "Figure SPM.10",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "SSP",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "carbon budgets",
+          "carbon dioxide",
+          "projection",
+          "shared socio-economic pathways"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/cfe938e70f8f4e98b0622296743f7913",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.10 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.10 shows global warming as a function of cumulative emissions of carbon dioxide.\r\n\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nNear-linear relationship between cumulative CO2 emissions and the increase in global surface temperature. Top panel: Historical data (thin black line) shows observed global surface temperature increase in \u00b0C since 1850\u20131900 as a function of historical cumulative carbon dioxide (CO2) emissions in GtCO2 from 1850 to 2019. The grey range with its central line shows a corresponding estimate of the historical human-caused surface warming (see Figure SPM.2). Coloured areas show the assessed very likely range of global surface temperature projections, and thick coloured central lines show the median estimate as a function of cumulative CO2 emissions from 2020 until year 2050 for the set of illustrative scenarios (SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0, and SSP5-8.5, see Figure SPM.4). Projections use the cumulative CO2 emissions of each respective scenario, and the projected global warming includes the contribution from all anthropogenic forcers. The relationship is illustrated over the domain of cumulative CO2 emissions for which there is high confidence that the transient climate response to cumulative CO2 emissions (TCRE) remains constant, and for the time period from 1850 to 2050 over which global CO2 emissions remain net positive under all illustrative scenarios as there is limited evidence supporting the quantitative application of TCRE to estimate temperature evolution under net negative CO2 emissions. Bottom panel: Historical and projected cumulative CO2 emissions in GtCO2 for the respective scenarios. {Figure TS.18, Figure 5.31, Section 5.5}\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has two panels that are closely linked. Data files for the top panel are labelled with 'Top_panel' while data files for the bottom panel are labelled with 'Bottom_panel'.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains:\r\n\r\nTop panel:\r\n\r\n- Cumulative global total anthropogenic carbon dioxide emissions (1850-2019)\r\n- Global surface temperature increase relative to 1850-1900 (1850-2019)\r\n- Estimated human-caused warming relative to 1850-1900 (1850-2019)\r\n- Projected global total anthropogenic carbon dioxide emissions for the five scenarios of the AR6 WGI core set of scenarios (2015-2050)\r\n- Assessed global surface temperature increase relative to 1850-1900 for the five scenarios of the AR6 WGI core set of scenarios (2015-2050)\r\n\r\nBottom panel:\r\n\r\n- Cumulative global total anthropogenic carbon dioxide emissions (1850-2019)\r\n- Projected global total anthropogenic carbon dioxide emissions for the five scenarios of the AR6 WGI core set of scenarios (2015-2050)\r\n\r\nThe illustrative SSP (Shared Socio-economic Pathway) scenarios (referred to here as core scenarios) are described in Box SPM.1 of the Summary for Policymakers and Section 1.6.1.1 of Chapter 1.",
+        "associatedMedia": [
+          "https://doi.org/10.1016/j.gloenvcha.2016.05.009",
+          "https://doi.org/10.1038/s41558-018-0091-3",
+          "https://doi.org/10.5194/gmd-12-1443-2019",
+          "https://doi.org/10.5194/gmd-13-5175-2020",
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Global",
+        "spatialResolution": "n/a",
+        "startDate": "1850-01-01",
+        "endDate": "2050-12-31",
+        "temporalResolution": "ANNUAL",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Canadell, P.",
+            "Haustein, K.",
+            "Marotzke, J.",
+            "Milinski, S.",
+            "Rogelj, J.",
+            "Szopa, S.",
+            "Trewin, B.",
+            "Zickfeld, K."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ],
+          "references": [
+            "https://doi.org/10.1016/j.gloenvcha.2016.05.009",
+            "https://doi.org/10.1038/s41558-018-0091-3",
+            "https://doi.org/10.5194/gmd-12-1443-2019",
+            "https://doi.org/10.5194/gmd-13-5175-2020"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Rogelj, J.; Trewin, B.; Haustein, K.; Canadell, P.; Szopa, S.; Milinski, S.; Marotzke, J.; Zickfeld, K. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.10 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/cfe938e70f8f4e98b0622296743f7913. http://dx.doi.org/10.5285/cfe938e70f8f4e98b0622296743f7913",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=559",
+      "version": "0.0.2",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=152"
+        },
+        {
+          "version": "0.0.2",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=559"
+        }
+      ],
+      "issued": "2021-10-14",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.1 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.1 shows global temperature history and causes of recent warming.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "Figure SPM.1",
+          "Holocene",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group 1",
+          "global surface temperature",
+          "pre-industrial temperature"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/76cad0b4f6f141ada1c44a4ce9e7d4bd",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.1 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.1 shows global temperature history and causes of recent warming.\r\n\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nHistory of global temperature change and causes of recent warming Panel a): Changes in global surface temperature reconstructed from paleoclimate archives (solid grey line, 1\u20132000) and from direct observations (solid black line, 1850\u20132020), both relative to 1850\u20131900 and decadally averaged. The vertical bar on the left shows the estimated temperature (very likely range) during the warmest multi-century period in at least the last 100,000 years, which occurred around 6500 years ago during the current interglacial period (Holocene). The Last Interglacial, around 125,000 years ago, is the next most recent candidate for a period of higher temperature. These past warm periods were caused by slow (multi-millennial) orbital variations. The grey shading with white diagonal lines shows the very likely ranges for the temperature reconstructions. Panel b): Changes in global surface temperature over the past 170 years (black line) relative to 1850\u20131900 and annually averaged, compared to CMIP6 climate model simulations (see Box SPM.1) of the temperature response to both human and natural drivers (brown), and to only natural drivers (solar and volcanic activity, green). Solid coloured lines show the multi-model average, and coloured shades show the very likely range of simulations. (see Figure SPM.2 for the assessed contributions to warming). {2.3.1, 3.3, Cross-Chapter Box 2.3, Cross-Section Box TS.1, Figure 1a, TS.2.2}\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has two panels, with data provided for all panels in subdirectories named panel_a and panel_b.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nPanel a\r\n\r\nThe dataset contains:\r\n\r\n- Estimated temperature during the warmest multi-century period in at least the last 100,000 years, which occurred around 6500 years ago (4500 BCE), multi-centennial average, from AR6 WGI Chapter 2\r\n- Global surface temperature change time series relative to 1850-1900 for 1-2020 from:\r\n\u2022 1-2000 CE reconstruction from paleoclimate archives, decadal smoothed, from PAGES2k Consortium (2019, DOI: 10.1038/s41561-019-0400-0)\r\n\u2022 1850-2020 CE, observations, decadal smoothed, from AR6 WGI Chapter 2 assessed mean\r\n\r\nPanel b:\r\n\r\nThe dataset contains global surface temperature change time series relative to 1850-1900 for 1850-2020 from simulations from the sixth phase of the Coupled Model Intercomparison Project (CMIP6) and observations:\r\n\r\n- CMIP6 historical+ssp245 simulations (simulations with human and natural forcing, 1850-2019)\r\n- CMIP6 hist-nat simulations (simulations with natural forcing, 1850-2019)\r\n- Global Surface Temperature Anomalies (GSTA) relative to 1850-1900 from observations assessed in IPCC AR6 WG1 Chapter 2 (1850-2020)\r\n\r\n---------------------------------------------------\r\nData provided in relation to figure\r\n---------------------------------------------------\r\nPanel a:\r\n\r\n- panel_a/SPM1_1-2000_recon.txt, 1-2000 time series, decadal smoothed, for years centered on 5-1996 CE [column 1 grey line, columns 2 and 3 grey shading]\r\n- panel_a/SPM1_1850-2020_obs.txt, 1850-2020 time series, decadal smoothed, for years centered on 1855-2016 CE [black line]\r\n- panel_a/SPM1_6500_recon.txt, bar for the warmest multi-century period in more than 100,000 years (around 6500 years ago: 4500 BCE) [grey bar]\r\n\r\nPanel b:\r\n\r\n- panel_b/gmst_changes_model_and_obs.csv. Global surface temperature change time series relative to 1850-1900 for 1850-2020 from:\r\n\u2022 CMIP6 historical+ssp245 simulations (1850-2019) [mean, brown line]\r\n\u2022 CMIP6 historical+ssp245 simulations (1850-2019) [5% range, brown shading, bottom]\r\n\u2022 CMIP6 historical+ssp245 simulations (1850-2019) [95% range, brown shading, top]\r\n\u2022 CMIP6 hist-nat simulations (1850-2019) [mean, green line]\r\n\u2022 CMIP6 hist-nat simulations (1850-2019) [5% range, green shading, bottom]\r\n\u2022 CMIP6 hist-nat simulations (1850-2019) [95% range, green shading, top]\r\n\u2022 Global Surface Temperature Anomalies (GSTA) relative to 1850-1900 from observations assessed in IPCC AR6 WG1 Chapter 2 (1850-2020) [black line]",
+        "associatedMedia": [
+          "https://www.ipcc.ch/report/ar6/wg1/",
+          "https://www.nature.com/articles/s41561-019-0400-0"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Global",
+        "spatialResolution": "n/a",
+        "startDate": "0001-01-01",
+        "endDate": "2019-12-31",
+        "temporalResolution": "ANNUAL",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Gillett, N.P.",
+            "Kaufman, D.",
+            "Malinina, E.",
+            "Neukom, R. "
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ],
+          "references": [
+            "https://www.nature.com/articles/s41561-019-0400-0"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Gillett, N.P.; Malinina, E.; Kaufman, D.; Neukom, R. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.1 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/76cad0b4f6f141ada1c44a4ce9e7d4bd. http://dx.doi.org/10.5285/76cad0b4f6f141ada1c44a4ce9e7d4bd",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "BADC-CSV",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=585",
+      "version": "0.0.2",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=154"
+        },
+        {
+          "version": "0.0.2",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=585"
+        }
+      ],
+      "issued": "2021-10-14",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.2 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.2 relates to assessed contributions to observed warming.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          " historical",
+          "AR6",
+          "CMIP6",
+          "Figure SPM.2",
+          "GMST",
+          "HadCRUT4.6",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "attribution",
+          "drivers",
+          "emissions",
+          "global mean surface temperature",
+          "global warming",
+          "human influence"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/c1eb6dad1598427f8f9f3eae346ece2f",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.2 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.2 relates to assessed contributions to observed warming.\r\n\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nAssessed contributions to observed warming in 2010\u20132019 relative to 1850\u20131900. Panel a): Observed global warming (increase in global surface temperature) and its very likely range {3.3.1, Cross-Chapter Box 2.3}. Panel b): Evidence from attribution studies, which synthesize information from climate models and observations. The panel shows temperature change attributed to total human influence, changes in well-mixed greenhouse gas concentrations, other human drivers due to aerosols, ozone and land-use change (land-use reflectance), solar and volcanic drivers, and internal climate variability. Whiskers show likely ranges {3.3.1}. Panel c): Evidence from the assessment of radiative forcing and climate sensitivity. The panel shows temperature changes from individual components of human influence, including emissions of greenhouse gases, aerosols and their precursors; land-use changes (land-use reflectance and irrigation); and aviation contrails. Whiskers show very likely ranges. Estimates account for both direct emissions into the atmosphere and their effect, if any, on other climate drivers. For aerosols, both direct (through radiation) and indirect (through interactions with clouds) effects are considered. {6.4.2, 7.3}\r\n\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has three panels, with data provided for all panels in subdirectories named panel_a, panel_b and panel_c.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis data set contains:\r\n\r\n- Observed warming (2010-2019 relative to 1850-1900)\r\n- Aggregated contributions to 2010-2019 warming relative 1850 -1900, assessed from attribution studies\r\n- Contributions to 2010-2019 warming relative to 1850-1900, assessed from radiative studies\r\n\r\n---------------------------------------------------\r\nData provided in relation to figure\r\n---------------------------------------------------\r\nPanel a:\r\n\r\n- Data file: panel_a/SPM2a.csv (Observed warming). Mean value is used for the bar plot and top and bottom values are used for the error bars and they represent borders of the very likely range.\r\n\r\nPanel b:\r\n\r\n- Data file: panel_b/SPM2b.csv (Aggregated contributions assessed from attribution studies). Mean values are used for the bar plot and top and bottom values are used for the error bars and represent the borders of the very likely range\r\n\r\nPanel c:\r\n\r\n- Data file: panel_c/SPM2c_data.csv (Contributions assessed from radiative studies). Total global surface air temperature (GSAT) effect values are used for the bar plots and 5% and 95% very likely limit values are used for the error bars.",
+        "associatedMedia": [
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Global",
+        "spatialResolution": "n/a",
+        "startDate": "1850-01-01",
+        "endDate": "2019-12-31",
+        "temporalResolution": "OTHER",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).\r\nData curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Berntsen, T.",
+            "Blichner, S.",
+            "Collins, B.",
+            "Gillett, N.",
+            "Smith, C.",
+            "Szopa, S.",
+            "Thorne, P.",
+            "Trewin, B."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Szopa, S.; Smith, C.; Blichner, S.; Berntsen, T.; Collins, B.; Gillett, N.; Thorne, P.; Trewin, B. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.2 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/c1eb6dad1598427f8f9f3eae346ece2f. http://dx.doi.org/10.5285/c1eb6dad1598427f8f9f3eae346ece2f",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "identifier": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=605",
+      "version": "0.0.2",
+      "revisions": [
+        {
+          "version": "0.0.1",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=155"
+        },
+        {
+          "version": "0.0.2",
+          "url": "https://ipcc-exchange.metadata.works/onboarding/progress?dataModelId=605"
+        }
+      ],
+      "issued": "2021-10-14",
+      "modified": "2021-11-02",
+      "summary": {
+        "title": "Data for Figure SPM.4 (v20210809) - Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report",
+        "abstract": "Figure SPM.4 panel a shows global emissions projections for CO2 and a set of key non-CO2 climate drivers, for the core set of five IPCC AR6 scenarios. Figure SPM.4 panel b shows attributed warming in 2081-2100 relative to 1850-1900 five SSP Scenarios.",
+        "contactPoint": "ipcc.ddc.datasupport@metadata.atlassian.net",
+        "keywords": [
+          "AR6",
+          "Figure SPM.4",
+          "IPCC",
+          "IPCC-DDC",
+          "Physical Science Basis",
+          "SPM",
+          "SSP",
+          "Sixth Assessment Report",
+          "Summary for Policymakers",
+          "WG1",
+          "WGI",
+          "Working Group I",
+          "projections",
+          "scenarios",
+          "shared socioeconomic pathways"
+        ],
+        "doiName": "http://dx.doi.org/10.5285/bd65331b1d344ccca44852e495d3a049",
+        "publicationDate": "2021-08-09",
+        "publisher": {
+          "identifier": "https://ror.org/02b5d8509",
+          "name": "NERC EDS Centre for Environmental Data Analysis",
+          "description": "https://nerc.ukri.org/",
+          "contactPoint": "support@ceda.ac.uk"
+        }
+      },
+      "documentation": {
+        "description": "Data for Figure SPM.4 from the Summary for Policymakers (SPM) of the Working Group I (WGI) Contribution to the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).\r\n\r\nFigure SPM.4 panel a shows global emissions projections for CO2 and a set of key non-CO2 climate drivers, for the core set of five IPCC AR6 scenarios. Figure SPM.4 panel b shows attributed warming in 2081-2100 relative to 1850-1900 for total anthropogenic, CO2, other greenhouse gases, and other anthropogenic forcings for five Shared Socio-economic Pathway (SSP) scenarios.\r\n\r\n---------------------------------------------------\r\nFigure Caption\r\n---------------------------------------------------\r\nFuture anthropogenic emissions of key drivers of climate change and warming contributions by groups of drivers for the five illustrative scenarios used in this report. The five scenarios are SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5. Panel a) Annual anthropogenic (human-caused) emissions over the 2015\u20132100 period. Shown are emissions trajectories for carbon dioxide (CO2) from all sectors (GtCO2/yr) (left graph) and for a subset of three key non-CO2 drivers considered in the scenarios: methane (CH4, MtCH4/yr, top-right graph), nitrous oxide (N2O, MtN2O/yr, middle-right graph) and sulfur dioxide (SO2, MtSO2/yr, bottom-right graph, contributing to anthropogenic aerosols in panel b). Panel b) Warming contributions by groups of anthropogenic drivers and by scenario are shown as change in global surface temperature (\u00b0C) in 2081\u20132100 relative to 1850\u20131900, with indication of the observed warming to date. Bars and whiskers represent median values and the very likely range, respectively. Within each scenario bar plot, the bars represent total global warming (\u00b0C; total bar) (see Table SPM.1) and warming contributions (\u00b0C) from changes in CO2 (CO2 bar), from non-CO2 greenhouse gases (non-CO2 GHGs bar; comprising well-mixed greenhouse gases and ozone) and net cooling from other anthropogenic drivers (aerosols and land-use bar; anthropogenic aerosols, changes in reflectance due to land-use and irrigation changes, and contrails from aviation; see Figure SPM.2, panel c, for the warming contributions to date for individual drivers). The best estimate for observed warming in 2010\u20132019 relative to 1850\u20131900 (see Figure SPM.2, panel a) is indicated in the darker column in the total bar. Warming contributions in panel b are calculated as explained in Table SPM.1 for the total bar. For the other bars the contribution by groups of drivers are calculated with a physical climate emulator of global surface temperature which relies on climate sensitivity and radiative forcing assessments. {Cross-Chapter Box 1.4, 4.6, Figure 4.35, 6.7, Figure 6.18, 6.22 and 6.24, Cross-Chapter Box 7.1, 7.3, Figure 7.7, Box TS.7, Figures TS.4 and TS.15}\r\n\r\n---------------------------------------------------\r\nFigure subpanels\r\n---------------------------------------------------\r\nThe figure has two panels, with data provided for all panels in subdirectories named panel_a and panel_b.\r\n\r\n---------------------------------------------------\r\nList of data provided\r\n---------------------------------------------------\r\nThis dataset contains:\r\n\r\n- Projected emissions from 2015 to 2100 for the five scenarios of the AR6 WGI core scenario set (SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0, SSP5-8.5)\r\n- Projected warming for all anthropogenic forcers, CO2 only, non-CO2 greenhouse gases (GHGs) only, and other anthropogenic components for 2081-2100 relative to 1850-1900, for SSP1-1.9, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5.\r\n\r\nThe five illustrative SSP (Shared Socio-economic Pathway) scenarios are described in Box SPM.1 of the Summary for Policymakers and Section 1.6.1.1 of Chapter 1.\r\n\r\n---------------------------------------------------\r\nData provided in relation to figure\r\n---------------------------------------------------\r\nPanel a:\r\n\r\nThe first column includes the years, while the next columns include the data per scenario and per climate forcer for the line graphs.\r\n\r\n- Data file: Carbon_dioxide_Gt_CO2_yr.csv. relates to Carbon dioxide emissions panel\r\n- Data file: Methane_Mt_CO2_yr.csv. relates to Methane emissions panel\r\n- Data file: Nitrous_oxide_Mt N2O_yr.csv. relates to Nitrous oxide emissions panel\r\n- Data file: Sulfur_dioxide_Mt SO2_yr.csv. relates to Sulfur dioxide emissions panel\r\n\r\nPanel b:\r\n\r\n- Data file: ts_warming_ranges_1850-1900_base_panel_b.csv. [Rows 2 to 5 relate to the first bar chart (cyan). Rows 6 to 9 relate to the second bar chart (blue). Rows 10 to 13 relate to the third bar chart (orange). Rows 14 to 17 relate to the fourth bar chart (red). Rows 18 to 21 relate to the fifth bar chart (brown).].",
+        "associatedMedia": [
+          "https://gmd.copernicus.org/articles/13/5175/2020/",
+          "https://www.ipcc.ch/report/ar6/wg1/"
+        ],
+        "isPartOf": [
+          "Summary for Policymakers of the Working Group I Contribution to the IPCC AR6"
+        ]
+      },
+      "coverage": {
+        "spatialCoverage": "Global",
+        "spatialAggregation": "Global",
+        "spatialResolution": "n/a",
+        "startDate": "1850-01-01",
+        "endDate": "2100-12-21",
+        "temporalResolution": "OTHER",
+        "geographicBoundingBox": {
+          "lowerLeftLatitude": "-90.0000",
+          "lowerLeftLongitude": "-180.0000",
+          "upperRightLatitude": "90.0000",
+          "upperRightLongitude": "180.0000"
+        }
+      },
+      "provenance": {
+        "purpose": "Data produced by Intergovernmental Panel on Climate Change (IPCC) authors and supplied for archiving at the Centre for Environmental Data Analysis (CEDA) by the Technical Support Unit (TSU) for IPCC Working Group I (WGI).  Data curated on behalf of the IPCC Data Distribution Centre (IPCC-DDC)."
+      },
+      "accessibility": {
+        "usage": {
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "resourceCreator": [
+            "Marotzke, J.",
+            "Meinshausen, M.",
+            "Milinski, S.",
+            "Plattner, G.-K.",
+            "Rogelj, J.",
+            "Smith, C.",
+            "Szopa, S."
+          ],
+          "isReferencedBy": [
+            "https://www.ipcc.ch/report/ar6/wg1/"
+          ],
+          "references": [
+            "https://gmd.copernicus.org/articles/13/5175/2020/"
+          ]
+        },
+        "access": {
+          "accessService": "Public data: access to these data is available to both registered and non-registered users.\r\nUse of these data is covered by the following licence: http://creativecommons.org/licenses/by/4.0/. When using these data you must cite them correctly using the citation given on the Data Catalogue record.\r\n\r\nWhen citing this dataset, please include both the data citation below (under 'Citable as') and the following citation for the report component from which the figure originates:\r\n\r\nIPCC, 2021: Summary for Policymakers. In: Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S. L. Connors, C. P\u00e9an, S. Berger, N. Caud, Y. Chen, L. Goldfarb, M. I. Gomis, M. Huang, K. Leitzell, E. Lonnoy, J.B.R. Matthews, T. K. Maycock, T. Waterfield, O. Yelek\u00e7i, R. Yu and B. Zhou (eds.)]. Cambridge University Press. In Press.\r\n\r\nCitable as:  Rogelj, J.; Smith, C.; Plattner, G.-K.; Meinshausen, M.; Szopa, S.; Milinski, S.; Marotzke, J. (2021): Summary for Policymakers of the Working Group I Contribution to the IPCC Sixth Assessment Report - data for Figure SPM.4 (v20210809). NERC EDS Centre for Environmental Data Analysis, 09 August 2021. doi:10.5285/bd65331b1d344ccca44852e495d3a049. http://dx.doi.org/10.5285/bd65331b1d344ccca44852e495d3a049",
+          "language": [
+            "en"
+          ],
+          "format": [
+            "csv"
+          ]
+        }
+      }
+    }
+  ]
+}
