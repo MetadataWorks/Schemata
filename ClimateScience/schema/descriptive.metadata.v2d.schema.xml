@@ -1,0 +1,669 @@
+<catalogue xmlns="http://www.metadataregistry.org.uk/assets/schema/2.2/metadataregistry.xsd">
+  <dataClass name="Descriptive Metadata" dataModel="IPCC">
+    <description>IPCC Descriptive Metadata Schema</description>
+    <dataClass name="Summary" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">1</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>Summary metadata must be completed by Data Custodians onboarding metadata.</description>
+      <dataElement name="Title" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>The title should provide a short description of the dataset and be unique across the IPCC DDC. If your title is not unique, please add a prefix with your organisation name or identifier to differentiate it from other datasets within the IPCC DDC. Please avoid acronyms wherever possible. &lt;br&gt;&lt;br&gt;Good titles should summarise the content of the dataset and if relevant, the region the dataset covers and ideally will be 80 characters or under.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_title</description>
+        <extensions>
+          <extension key="$id">properties/summary/title</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473034/Title</extension>
+        </extensions>
+        <dataType name="title" dataModel="IPCC">
+          <regex>^.{2,180}$</regex>
+        </dataType>
+      </dataElement>
+      <dataElement name="Abstract" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Provide a clear and brief descriptive signpost for researchers who are searching for data that may be relevant to their research. The abstract should allow the reader to determine the scope of the data collection and accurately summarise its content. &lt;br&gt;The optimal length is one paragraph (limited to 255 characters) and effective abstracts should avoid long sentences and abbreviations where possible.
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_description</description>
+        <extensions>
+          <extension key="$id">properties/summary/abstract</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473047/Abstract</extension>
+        </extensions>
+        <dataType name="abstract" dataModel="IPCC">
+          <regex>^.{5,255}$</regex>
+        </dataType>
+      </dataElement>
+      <dataElement name="Contact Point" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Please provide a valid email address that can be used to coordinate data enquiries with the publisher.&lt;br&gt;&lt;br&gt;Organisations are expected to provide a dedicated email address associated with the data access request process for their organisation.&lt;br&gt;&lt;br&gt;This will then be used as a default contact point for all datasets submitted by the organisation. However, there will be the opportunity to overwrite his value for each dataset.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point</description>
+        <extensions>
+          <extension key="$id">properties/summary/publisher/contactPoint</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473125/Contact+Point+Publisher</extension>
+        </extensions>
+        <dataType name="email" dataModel="IPCC">
+          <regex>[^\s]+@[^\s]+\.[^\s]+</regex>
+        </dataType>
+      </dataElement>
+      <dataElement name="Keywords" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>Please provide relevant and specific keywords that can improve the SEO of your dataset. &lt;br&gt;IPCC could encourage users to at a minimum provide tags for: assessment report (AR[x]), Working Group, Chapter, Figure, Input, Final, Intermediate.
+
+"https://www.w3.org/TR/vocab-dcat-3/#Property:resource_keyword"</description>
+        <extensions>
+          <extension key="$id">properties/summary/keywords</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473075/Keywords</extension>
+        </extensions>
+        <dataType name="shortDescription" dataModel="IPCC">
+          <regex>^.{2,80}$</regex>
+        </dataType>
+      </dataElement>
+      <dataElement name="DOI Name" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>All IPCC DDC registered datasets should either have a Digital Object Identifier (DOI) or be working towards obtaining one. If a DOI is available and has been minted through another system/organisation, please provide the DOI. If there is not a DOI the IPCC DDC can mint a DOI for your dataset.</description>
+        <extensions>
+          <extension key="$id">properties/summary/doiName</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473088/DoiName</extension>
+        </extensions>
+        <dataType name="doi" dataModel="IPCC" />
+      </dataElement>
+      <dataElement name="Alternate Identifier" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>An identifier or identifiers other than the primary Identifier applied to the resource being registered.&lt;br&gt;This may be any alphanumeric string which is unique within its domain of issue.
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_identifier
+http://purl.org/dc/terms/identifier</description>
+        <extensions>
+          <extension key="$id">properties/summary/alternateIdentifier</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1853194744/Alternate+Identifiers</extension>
+        </extensions>
+        <dataType name="alternateId" dataModel="IPCC">
+          <regex>^.{2,180}$</regex>
+        </dataType>
+      </dataElement>
+      <dataElement name="Publication Date" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Please provide the date on which this dataset was or will be published.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_release_date
+or
+https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_release_date</description>
+        <extensions>
+          <extension key="$id">properties/summary/publicationDate</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1869119598/Publication+Date</extension>
+        </extensions>
+        <dataType name="xs:date" dataModel="IPCC" />
+      </dataElement>
+      <dataClass name="Publisher" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>This is the organisation responsible for running or supporting the data access request process, as well as publishing and maintaining the metadata.</description>
+        <dataElement name="Contact Point" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataElement/4003">
+          <metadata>
+            <extension key="Min Occurs">1</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+        </dataElement>
+        <dataElement name="Identifier" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">1</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>Please provide an identifier for your organisation.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_identifier</description>
+          <extensions>
+            <extension key="$id">properties/summary/publisher/identifier</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1856340125/Identifier</extension>
+          </extensions>
+          <dataType name="url" dataModel="IPCC">
+            <regex>((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&amp;=\+\$,\w]+@)?[A-Za-z0-9.\-]+(:[0-9]+)?|(?:www.|[\-;:&amp;=\+\$,\w]+@)[A-Za-z0-9.\-]+)((?:\/[\+~%\/.\w_\-]*)?\??(?:[\-\+=&amp;;%@.\w_]*)#?(?:[\w]*))?)</regex>
+          </dataType>
+        </dataElement>
+        <dataElement name="Name" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">1</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>Please provide the name of the publisher.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_publisher</description>
+          <extensions>
+            <extension key="$id">properties/summary/publisher/name</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473112/Name</extension>
+          </extensions>
+          <dataType name="shortDescription" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4004" />
+        </dataElement>
+        <dataElement name="Logo" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>Please provide a logo associated with the Organisation using a valid URL. The following formats will be accepted .jpg, .png or .svg.</description>
+          <extensions>
+            <extension key="$id">properties/summary/publisher/logo</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1853030596/Logo</extension>
+          </extensions>
+          <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+        </dataElement>
+        <dataElement name="Description" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">1</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>An HTML account of the data that provides context and scope of the data, limited to 10000 characters, and/or a resolvable URL that describes the dataset.&lt;br&gt;&lt;br&gt;Additional information can be recorded and included using media.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:record_description</description>
+          <extensions>
+            <extension key="$id">properties/documentation/description</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473168/Description</extension>
+          </extensions>
+          <dataType name="longDescription" dataModel="IPCC">
+            <regex>.{2,10000}</regex>
+          </dataType>
+        </dataElement>
+      </dataClass>
+    </dataClass>
+    <dataClass name="Documentation" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">0</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>Documentation can include a rich text description of the dataset or links to media such as documents, images, presentations, videos or links to data dictionaries, profiles or dashboards.</description>
+      <dataElement name="Description" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataElement/4018">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+      </dataElement>
+      <dataElement name="Associated Media" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>Please provide any media associated with the dataset using a valid URI for the content. This is an opportunity to provide additional context that could be useful for researchers wanting to understand more about the dataset and its relevance to their research question.&lt;br&gt;&lt;br&gt;The following formats will be previewed .jpg, .png or .svg, .pdf, .xslx or .docx. Other formats can be used as url links.&lt;br&gt;&lt;br&gt;Note: media asset can be hosted by the organisation or uploaded
+
+https://schema.org/associatedMedia</description>
+        <extensions>
+          <extension key="$id">properties/documentation/associatedMedia</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473181/Associated+Media</extension>
+        </extensions>
+        <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+      </dataElement>
+      <dataElement name="Is Part Of" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>Please complete only if the dataset is part of a group or collection of datasets.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_relation</description>
+        <extensions>
+          <extension key="$id">properties/documentation/isPartOf</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473194/Is+Part+Of</extension>
+        </extensions>
+        <dataType name="shortDescription" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4004" />
+      </dataElement>
+    </dataClass>
+    <dataClass name="Coverage" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">0</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>This information includes attributes for geographical and temporal coverage, cohort details etc. to enable a deeper understanding of the dataset content so that researchers can make decisions about the relevance of the underlying data.</description>
+      <dataElement name="Spatial Aggregation" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>A statement describing the type of spatial aggregation used in the dataset (e.g. region, area, grid, etc.).</description>
+        <extensions>
+          <extension key="$id">properties/coverage/spatialAggregation</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1856340135/Spatial+Aggregation</extension>
+        </extensions>
+        <dataType name="shortDescription" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4004" />
+      </dataElement>
+      <dataElement name="Spatial Resolution" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>A statement of the amount of detail provided to sufficiently assess fitness for purpose. Precision can be expressed as a distance, or expressed without unit of measure specifying spatial resolution by means of an "equivalent scale" with a fraction (e.g., 1:1,000, 1:1,000,000) or alternatively specifying the angular distance.&lt;br&gt;&lt;br&gt;Where the spatial resolution of the dataset is not the original resolution of the data (e.g., the resolution at which a climate model was run), you can note that in the description.
+
+maybe : https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_spatial_resolution</description>
+        <extensions>
+          <extension key="$id">properties/coverage/spatialResolution</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1853194775/Spatial+Resolution</extension>
+        </extensions>
+        <dataType name="shortDescription" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4004" />
+      </dataElement>
+      <dataElement name="Start Date" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>The start of the time period that the dataset provides coverage for. &lt;br&gt;&lt;br&gt;If there are multiple cohorts in the dataset with varying start dates, please provide the earliest date and use the description or the media attribute to provide more information.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:period_start_date</description>
+        <extensions>
+          <extension key="$id">properties/coverage/startDate</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473389/Start+Date</extension>
+        </extensions>
+        <dataType name="xs:date" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4010" />
+      </dataElement>
+      <dataElement name="End Date" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>The end of the time period that the dataset provides coverage for.  &lt;br&gt;&lt;br&gt;If the dataset is &#8220;Continuous&#8221; and has no known end date, please leave blank. &lt;br&gt;&lt;br&gt;If there are multiple cohorts in the dataset with varying end dates, please provide the latest date and use the description or the media attribute to provide more information.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:period_end_date</description>
+        <extensions>
+          <extension key="$id">properties/coverage/endDate</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473402/End+Date</extension>
+        </extensions>
+        <dataType name="xs:date" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4010" />
+      </dataElement>
+      <dataElement name="Temporal Resolution" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Minimum time period resolvable in the dataset distribution.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_temporal_resolution</description>
+        <extensions>
+          <extension key="$id">properties/coverage/temporalResolution</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473359/Temporal+Resolution</extension>
+        </extensions>
+        <dataType name="temporalResolution" dataModel="IPCC" />
+      </dataElement>
+      <dataClass name="Geographic Bounding Box" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>The geographic bounding box describes the spatial coverage in terms of a square as specified by the longitude and latitude values of the lower left and upper right corners.
+Please enter the four values in terms of degrees North or East, with longitudes given relative to the prime meridian (yielding values between -180E and 180E).
+Note that a "north up" area is described so that generally the upper right longitude will be greater than the lower left longitude.
+
+ref: https://www.w3.org/TR/vocab-dcat-3/#Property:location_bbox</description>
+        <dataElement name="Lower Left Latitude" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>The geographic bounding box describes a "north up" area. The lower left latitude will be smaller than the upper right latitude.
+
+see https://opengeospatial.github.io/ogc-geosparql/geosparql11/geo.ttl#wktLiteral</description>
+          <extensions>
+            <extension key="$id">properties/coverage/geographicBoundingBox/lowerLeftLatitude</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1863188555/Lower+Left+Latitude</extension>
+          </extensions>
+          <dataType name="bbox_lat" dataModel="IPCC" />
+        </dataElement>
+        <dataElement name="Lower Left Longitude" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>The geographic bounding box describes a "north up" area. Generally the lower left longitude will be smaller than the upper right longitude. However when the area crosses the 180&#176; meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.</description>
+          <extensions>
+            <extension key="$id">properties/coverage/geographicBoundingBox/lowerLeftLongitude</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1863417909/Lower+Left+Longitude</extension>
+          </extensions>
+          <dataType name="bbox_long" dataModel="IPCC" />
+        </dataElement>
+        <dataElement name="Upper Right Latitude" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>The geographic bounding box describes a "north up" area. Upper right latitude will be greater than the lower left latitude.</description>
+          <extensions>
+            <extension key="$id">properties/coverage/geographicBoundingBox/upperRightLatitude</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1863450687/Upper+Right+Latitude</extension>
+          </extensions>
+          <dataType name="bbox_lat" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4031" />
+        </dataElement>
+        <dataElement name="Upper Right Longitude" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>The geographic bounding box describes a "north up" area. Generally the upper right longitude will be greater than the lower left longitude. However when the area crosses the 180&#176; meridian, the value of the lower left longitude will be greater than the value of the upper right longitude.</description>
+          <extensions>
+            <extension key="$id">properties/coverage/geographicBoundingBox/upperRightLongitude</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1863417925/Upper+Right+Longitude</extension>
+          </extensions>
+          <dataType name="bbox_long" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4033" />
+        </dataElement>
+      </dataClass>
+    </dataClass>
+    <dataClass name="Provenance" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">0</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>Provenance information allows researchers to understand data within the context of its origins and can be an indicator of quality, authenticity and timeliness.
+
+https://www.w3.org/2001/sw/wiki/PROV</description>
+      <dataElement name="Description (Provenance)" dataModel="IPCC">
+        <metadata>
+          <extension key="Max Occurs">*</extension>
+          <extension key="Min Occurs">0</extension>
+        </metadata>
+        <description>Please indicate the purpose(s) that the dataset was collected.</description>
+        <extensions>
+          <extension key="$id">properties/provenance/purpose</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473309/Purpose</extension>
+        </extensions>
+        <dataType name="shortDescription" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4004" />
+      </dataElement>
+      <dataElement name="Source" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Please indicate the source of the data extraction.</description>
+        <extensions>
+          <extension key="$id">properties/provenance/source</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473322/Source</extension>
+        </extensions>
+        <dataType name="provenanceOrigin" dataModel="IPCC">
+          <regex>^.{2,3000}$</regex>
+        </dataType>
+      </dataElement>
+    </dataClass>
+    <dataClass name="Accessibility" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">1</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>Accessibility information allows researchers to understand access, usage, limitations, formats, standards and linkage or interoperability with toolsets. This section includes information about how the data can be used and how it is currently being used.</description>
+      <dataClass name="Usage" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">1</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Accessibility information allows researchers to understand access, usage, limitations, formats, standards and linkage or interoperability with toolsets. This section includes information about how the data can be used and how it is currently being used.</description>
+        <dataElement name="License" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">1</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>Legal document under which the distribution of data is made available.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_license</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/usage/license</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1857617931/License</extension>
+          </extensions>
+          <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+        </dataElement>
+        <dataElement name="Resource Creator" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">*</extension>
+          </metadata>
+          <description>The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_creator</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/usage/resourceCreator</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473486/Resource+Creator</extension>
+          </extensions>
+          <dataType name="creator" dataModel="IPCC">
+            <regex>^.{2,1000}$</regex>
+          </dataType>
+        </dataElement>
+        <dataElement name="Is Referenced By" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">*</extension>
+          </metadata>
+          <description>Please provide the keystone paper associated with the dataset. Also include a list of known citations, if available, and should be links to existing resources where the dataset has been used or referenced.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_is_referenced_by</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/usage/isReferencedBy</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473521/Is+Referenced+By</extension>
+          </extensions>
+          <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+        </dataElement>
+        <dataElement name="References" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">*</extension>
+          </metadata>
+          <description>A related resource that is referenced, cited, or otherwise pointed to by the described resource.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_relation</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/usage/references</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1857617941/References</extension>
+          </extensions>
+          <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+        </dataElement>
+      </dataClass>
+      <dataClass name="Access" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Accessibility information allows researchers to understand access, usage, limitations, formats, standards and linkage or interoperability with toolsets. This section includes information about data access.</description>
+        <dataElement name="Access URL" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>A URL of the resource that gives access to a distribution of the dataset. E.g. landing page, download link, service desk request.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_url</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/access/accessUrl</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1857519648/Access+URL</extension>
+          </extensions>
+          <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+        </dataElement>
+        <dataElement name="Access Service" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">1</extension>
+          </metadata>
+          <description>Please provide a brief description of the environment where data can be accessed by researchers.&lt;br&gt;If no environment is currently available, please indicate the current plans and timelines when the data will be made available through an access environment or process.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_service</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/access/accessService</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473574/Access+Service</extension>
+          </extensions>
+          <dataType name="longDescription" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4017" />
+        </dataElement>
+        <dataElement name="Jurisdiction" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">*</extension>
+          </metadata>
+          <description>Please use country code from ISO 3166-1 country codes and the associated ISO 3166-2 for regions, cities, states etc. for the country/state under whose laws the data subjects&#8217; data is collected, processed and stored. Multiple Jurisdictions may be provided (if applicable).
+
+https://schema.org/jurisdiction</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/access/jurisdiction</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473628/Jurisdiction</extension>
+          </extensions>
+          <dataType name="IsoCountryCode" dataModel="IPCC" />
+        </dataElement>
+        <dataElement name="Language" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">*</extension>
+          </metadata>
+          <description>A list of all the languages in which the dataset metadata and underlying data is made available. This refers to the natural language used for textual metadata (i.e. titles, descriptions, etc) of a catalogued resource (i.e. dataset or service) or the textual values of a dataset distribution.
+
+https://schema.org/Language</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/access/language</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473835/Language</extension>
+          </extensions>
+          <dataType name="language" dataModel="IPCC" />
+        </dataElement>
+        <dataElement name="Format" dataModel="IPCC">
+          <metadata>
+            <extension key="Min Occurs">0</extension>
+            <extension key="Max Occurs">*</extension>
+          </metadata>
+          <description>The file format of the distribution.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_format</description>
+          <extensions>
+            <extension key="$id">properties/accessibility/access/format</extension>
+            <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473853/Format</extension>
+          </extensions>
+          <dataType name="xs:string" dataModel="IPCC">
+            <description>Character strings in XML.</description>
+          </dataType>
+        </dataElement>
+      </dataClass>
+    </dataClass>
+    <dataClass name="Enrichment &amp; Linkage" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">0</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>This section includes information about related datasets that may have previously been linked, as well as indicating if there is the opportunity to link to other datasets in the future. If a dataset has been enriched and/or derivations, scores and existing tools are available this section allows providers to indicate this to researchers.</description>
+      <dataElement name="Qualified Relation" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>If applicable, please provide the DOI of any related datasets i.e. input to, output from, linked, referencing, referenced by. If no DOI is available for the data, please use a url, or the title of the dataset.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:relationship_relation</description>
+        <extensions>
+          <extension key="$id">properties/enrichmentAndLinkage/qualifiedRelation</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473896/Qualified+Relation</extension>
+        </extensions>
+        <dataType name="linkedDatasets" dataModel="IPCC">
+          <regex>((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&amp;=\+\$,\w]+@)?[A-Za-z0-9.\-]+(:[0-9]+)?|(?:www.|[\-;:&amp;=\+\$,\w]+@)[A-Za-z0-9.\-]+)((?:\/[\+~%\/.\w_\-]*)?\??(?:[\-\+=&amp;;%@.\w_]*)#?(?:[\w]*))?)|ALL|NA</regex>
+        </dataType>
+      </dataElement>
+      <dataElement name="Tools" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">*</extension>
+        </metadata>
+        <description>Please provide the URL (e.g Github) of any analysis tools or models that have been created for this dataset and are available for further use. Multiple tools may be provided.</description>
+        <extensions>
+          <extension key="$id">properties/enrichmentAndLinkage/tools</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854473932/Tools</extension>
+        </extensions>
+        <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+      </dataElement>
+    </dataClass>
+    <dataClass name="Structural Metadata" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">0</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>We recommend that sites provide a data dictionary of structural metadata that includes the following information (please see the &lt;a href="https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854474061/STRUCTURAL+METADATA" class="light" target="onboardingCompletionGuidance"&gt;Structural Metadata Completion Guidance&lt;/a&gt; for full details including examples).</description>
+      <dataElement name="Structural Metadata" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Structural Metadata</description>
+        <extensions>
+          <extension key="$id">structuralMetadata</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1854474061/STRUCTURAL+METADATA</extension>
+        </extensions>
+        <dataType name="xs:string" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4056" />
+      </dataElement>
+    </dataClass>
+    <dataClass name="Data Status" dataModel="IPCC">
+      <metadata>
+        <extension key="Min Occurs">0</extension>
+        <extension key="Max Occurs">1</extension>
+      </metadata>
+      <description>This section allows data custodians to indicate the status of the data (and define a data access URL if applicable) so that researchers understand how to access the data.</description>
+      <dataElement name="Data Status" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>Please select the data status that best describes the environment researchers will use to access the data.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:resource_status</description>
+        <extensions>
+          <extension key="$id">properties/dataStatus/dataStatus</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1997471756/Data+Status</extension>
+        </extensions>
+        <dataType name="dataStatus" dataModel="IPCC" />
+      </dataElement>
+      <dataElement name="Data Access" dataModel="IPCC">
+        <metadata>
+          <extension key="Min Occurs">0</extension>
+          <extension key="Max Occurs">1</extension>
+        </metadata>
+        <description>A URL of the resource that gives access to the dataset. E.g. landing page, download link, service desk request. If the URL is an email address, you need to prefix it like this: mailto:name@sample.co.uk.
+
+https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_url</description>
+        <extensions>
+          <extension key="$id">properties/dataStatus/dataAccess</extension>
+          <extension key="$guidanceUrl">https://metadata.atlassian.net/wiki/spaces/IDSD/pages/1997471771/Data+Access</extension>
+        </extensions>
+        <dataType name="url" dataModel="IPCC" id="https://schema-exchange.metadata.works/catalogue/dataType/4013" />
+      </dataElement>
+    </dataClass>
+  </dataClass><!-- Relationship types are only imported if and only if they are not present in the catalogue yet. Any subsequent changes are ignored! For non-admin users, the types are always imported as system ones and they need to be approved by the catalogue admin first. -->
+  <relationshipTypes>
+    <relationshipType name="containment" source="org.modelcatalogue.core.DataClass" destination="org.modelcatalogue.core.DataElement" versionSpecific="true">
+      <sourceToDestination label="contains">A Data Class can contain multiple Data Elements. Contained Data Elements are finalized when the Class is finalized.</sourceToDestination>
+      <destinationToSource label="contained in">A Data Element can be contained in multiple Data Classes. When a new draft of a Data Element is created, then drafts for all containing Data Classes are created as well.</destinationToSource>
+      <rule>String minOccursString = ext['Min Occurs']
+            String maxOccursString = ext['Max Occurs']
+
+            Integer minOccurs = minOccursString in ['unbounded', 'null', '*', null, ''] ? 0 : (minOccursString as Integer)
+            Integer maxOccurs = maxOccursString in ['unbounded', 'null', '*', null, ''] ? Integer.MAX_VALUE : (maxOccursString as Integer)
+
+            if (minOccurs &lt; 0) {
+                return ["relationshipType.containment.min.occurs.less.than.zero", "'Max Occurs' has to be greater than zero"]
+            }
+            if (maxOccurs &lt; minOccurs) {
+                return ["relationshipType.containment.min.occurs.greater.than.max.occurs", "The metadata 'Min Occurs' cannot be greater than 'Min Occurs'"]
+            }
+            if (maxOccurs &lt; 1) {
+                return ["relationshipType.containment.max.occurs.zero", "The metadata 'Max Occurs' must be greater than zero"]
+            }
+
+            return true</rule>
+    </relationshipType>
+    <relationshipType name="hierarchy" source="org.modelcatalogue.core.DataClass" destination="org.modelcatalogue.core.DataClass" versionSpecific="true">
+      <sourceToDestination label="parent of">A Class can contain (be parent of) multiple Classes. Child Classes are finalized when parent Class is finalized.</sourceToDestination>
+      <destinationToSource label="child of">A Class can be contained (be child Class of) in multiple Classes. When a draft is created for child Class, drafts for parent Classes are created as well.</destinationToSource>
+    </relationshipType>
+  </relationshipTypes>
+</catalogue>
