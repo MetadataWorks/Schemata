@@ -10,7 +10,7 @@
         "count": {
             "$id": "#/properties/count",
             "title": "Dataset Count",
-            "description": "Number of datasets",descriptive.metadata.schema.v2d
+            "description": "Number of datasets",
             "$ref": "#/definitions/count",
             "examples": ["50"]
         },
@@ -349,7 +349,8 @@
                     "description": "This section includes information about data access.",
                     "$ref": "#/definitions/access"
                 }
-            }
+            },
+           "required": ["usage"]
         },
         "alternateIdentifier": {
             "$id": "#/definitions/alternateIdentifier",
@@ -1279,7 +1280,10 @@
                 "title",
                 "publisher",
                 "abstract",
-                "contactPoint"
+                "contactPoint",
+                "keywords",
+                "doi",
+                "publicationDate"              
             ],
             "properties": {
                 "title": {
@@ -1449,7 +1453,8 @@
                         {"$ref": "#/definitions/urlList"}
                     ]
                 }
-            }
+            },
+            "required": ["license"]
         }
     }
 }
